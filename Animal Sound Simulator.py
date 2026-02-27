@@ -1,5 +1,3 @@
-
-
 class Animal:
   def make_sound(self):
     print("The animal makes a sound")
