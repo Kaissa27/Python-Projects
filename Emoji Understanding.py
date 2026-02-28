@@ -41,4 +41,5 @@ def main():
     print(f"Sentiment: {sentiment}")
 
 if __name__ == "__main__":
+
     main()
