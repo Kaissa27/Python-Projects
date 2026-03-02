@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-# 1. Abstract Base Class (The Blueprint)
+# 1. Abstract Base Class
 class Employee(ABC):
     def __init__(self, name, id_number):
         self.name = name
@@ -23,7 +23,7 @@ class FullTimeEmployee(Employee):
     def calculate_pay(self):
         return self.monthly_salary
 
-# 3. Inheritance: Hourly Employee (Commission Logic)
+# 3. Inheritance: Hourly Employee 
 class HourlyEmployee(Employee):
     def __init__(self, name, id_number, hours_worked, hourly_rate):
         super().__init__(name, id_number)
@@ -70,4 +70,5 @@ def main():
     it_dept.run_payroll()
 
 if __name__ == "__main__":
+
     main()
