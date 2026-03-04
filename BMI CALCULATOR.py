@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
 
-
 # Main Window
 root = tk.Tk()
 root.title("BMI Calculator")
