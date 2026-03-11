@@ -1,4 +1,3 @@
-
 class Calculator:
   base_value = 100
 
