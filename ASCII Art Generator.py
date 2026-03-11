@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image 
 
 def load_image(image_path, new_width=100):
 	# Open Image
