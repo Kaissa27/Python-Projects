@@ -1,6 +1,6 @@
 import numpy as np
 
-# Function to Get Matrix Input
+# Function to Get Matrix Input 
 def get_matrix():
     try:
         rows = int(input("Enter the number of rows: "))
