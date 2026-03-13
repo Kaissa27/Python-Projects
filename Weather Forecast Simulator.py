@@ -1,4 +1,4 @@
-import sys
+import sys 
 
 def get_condition_style(condition):
     styles = {
@@ -51,4 +51,5 @@ def main():
             print("City data not available in offline database.")
 
 if __name__ == "__main__":
+
     main()
