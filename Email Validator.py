@@ -1,4 +1,4 @@
-import re
+import re 
 
 def is_valid_email(email):
     email = email.strip()
