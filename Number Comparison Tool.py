@@ -1,4 +1,3 @@
-
 # Number Comparison Tool
 number = 4
 
