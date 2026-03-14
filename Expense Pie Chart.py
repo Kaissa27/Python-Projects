@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
 
 def generate_chart(data):
     categories = list(data.keys())
