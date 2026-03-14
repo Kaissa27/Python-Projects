@@ -1,4 +1,3 @@
-
 # Note-Taking App
 
 with open("notes.txt", "r") as file:
