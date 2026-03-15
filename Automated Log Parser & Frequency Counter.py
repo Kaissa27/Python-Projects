@@ -2,7 +2,7 @@ import collections
 
 def analyze_logs():
     # Simulated log data (as if read from a file 'server.log')
-    # Format: [Timestamp] [Level] [IP Address] [Message]
+    # Format: [Timestamp] [Level] [IP Address] [Message] 
     raw_logs = [
         "[08:01] INFO 192.168.1.1 User Login",
         "[08:05] ERROR 192.168.1.50 Database Timeout",
