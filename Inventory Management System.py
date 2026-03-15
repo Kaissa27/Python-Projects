@@ -1,4 +1,4 @@
-class Calculator:
+class Calculator: 
   base_value = 100
 
   @staticmethod
