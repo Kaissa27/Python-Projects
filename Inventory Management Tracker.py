@@ -1,4 +1,4 @@
-import sys
+import sys 
 
 def add_item(inventory):
     name = input("Enter item name: ").strip().lower()
