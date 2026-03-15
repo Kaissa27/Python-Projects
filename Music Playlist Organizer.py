@@ -2,7 +2,7 @@ import os
 import shutil
 from mutagen import File
 import json
-
+ 
 def scan_directory(directory, extensions=(".mp3", ".flac", ".wav")):
     music_files = []
     for root, _, files in os.walk(directory):
