@@ -1,4 +1,4 @@
-import sys
+import sys 
 from datetime import datetime
 
 def calculate_stay(check_in, check_out, daily_rate):
