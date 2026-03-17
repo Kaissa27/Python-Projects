@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# Mock Weather Data
+# Mock Weather Data 
 weather_data = {
     "new york": {"temperature": 22, "condition": "Sunny"},
     "london": {"temperature": 15, "condition": "Cloudy"},
