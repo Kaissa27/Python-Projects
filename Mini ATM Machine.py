@@ -1,5 +1,3 @@
-
-
 # Mini ATM Machine
 
 class BankAccount:
