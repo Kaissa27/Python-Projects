@@ -1,4 +1,4 @@
-def translate_emoji(text):
+def translate_emoji(text): 
     emoji_map = {
         "😀": "Happy",
         "😢": "Sad",
