@@ -1,4 +1,3 @@
-
 # Event Countdown Timer
 from datetime import datetime, timedelta
 import time
