@@ -1,4 +1,3 @@
-
 # Ingredients Checker
 
 # Step 1: Define the recipe ingredients
