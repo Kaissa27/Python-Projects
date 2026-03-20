@@ -1,4 +1,3 @@
-
 # Mini To-Do App using JSON
 import json
 import os
