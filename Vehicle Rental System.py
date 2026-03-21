@@ -1,4 +1,4 @@
-import sys
+import sys 
 
 def calculate_fees(days, rate):
     base_price = days * rate
