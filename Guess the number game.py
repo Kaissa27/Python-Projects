@@ -1,7 +1,7 @@
 import random
 
 def main():
-    target = random.randint(1, 100)
+    target = random.randint(1, 100
     attempts = 0
     
     print("Guess the number between 1 and 100")
