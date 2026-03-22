@@ -1,4 +1,4 @@
-# Note-Taking App
+# Note-Taking App 
 
 with open("notes.txt", "r") as file:
   content = file.read()
