@@ -1,5 +1,5 @@
 # Number Comparison Tool 
-number = 4
+number = 4 
 
 if number > 5:
   print("The number is greater than 5.")
