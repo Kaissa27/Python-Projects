@@ -1,4 +1,3 @@
-
 # Weather App using OpenWeatherMap API
 import requests
 
