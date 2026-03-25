@@ -1,4 +1,4 @@
-# Daily Journal Logger
+# Daily Journal Logger 
 
 # Step 1: Define the journal file
 JOURNAL_FILE = 'daily_journal.txt'
