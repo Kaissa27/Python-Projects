@@ -1,4 +1,4 @@
-import sys
+import sys 
 
 def calculate_gpa(grades):
     if not grades:
