@@ -13,7 +13,7 @@ class Cat(Animal):
 # Polymorphism in action
 animals = [Dog(), Cat()]
 
-for animal in animals:
+for animal in animals: 
   animal.make_sound()
 
 class Shape:
