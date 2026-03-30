@@ -6,7 +6,7 @@ class Car:
   def display_info(self):
     print(f"This is a {self.brand}: {self.model}.")
 
-# Create an object
+# Create an object 
 my_car = Car("Tesla", "Model 3")
 my_car.display_info()
 
