@@ -14,7 +14,7 @@ window.geometry("400x400")
 
 # Create Result Label
 result_label = tk.Label(window, text="Player X's Turn", font=("Arial", 16))
-result_label.grid(row=0, column=0, columnspan=3)
+result_label.grid(row=0, column=0, columnspan=3) 
 
 buttons = [[None for _ in range(3)] for _ in range(3)]
 
