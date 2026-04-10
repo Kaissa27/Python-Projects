@@ -1,4 +1,4 @@
-import re 
+import re. 
 
 def scrape_simulation():
     # Simulated HTML content (what you'd get from a website)
