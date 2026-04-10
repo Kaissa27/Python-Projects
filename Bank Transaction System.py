@@ -1,4 +1,4 @@
-import sys 
+import sys
 
 def process_transaction(accounts, acc_id, amount, t_type):
     if t_type == "Withdraw" and accounts[acc_id]["balance"] < amount:
