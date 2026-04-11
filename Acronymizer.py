@@ -1,5 +1,5 @@
 user_input = input("Enter a phrase: ")
-words = user_input.split()
+words = user_input.split() 
 
 # List of words to ignore (all lowercase for easy matching)
 stop_words = ["of", "the", "and", "in", "to", "for", "a", "an"]
