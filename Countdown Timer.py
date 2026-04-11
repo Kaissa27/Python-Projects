@@ -6,7 +6,7 @@ for variable in range(start, stop, step):
 for i in range(5, 0, -1):
   print(i)
 
-while condition:
+while condition: 
   # Code to repeat
 
 count = 0
