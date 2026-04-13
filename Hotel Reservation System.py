@@ -50,7 +50,7 @@ def main():
                     days, total = calculate_stay(cin, cout, rooms[r_id]["rate"])
                     if days > 0:
                         print(f"\nGuest: {rooms[r_id]['guest']}")
-                        print(f"Stay Duration: {days} nights")
+                        print(f"Stay Duration: {days} nights") 
                         print(f"Total Bill: ${total:.2f}")
                         rooms[r_id]["guest"] = None
                     else:
