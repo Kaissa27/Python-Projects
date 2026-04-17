@@ -10,7 +10,7 @@ def show_fleet(fleet):
     print(f"\n{'ID':<5} | {'Vehicle':<15} | {'Type':<10} | {'Daily Rate':<10} | {'Status'}")
     print("-" * 60)
     for vid, details in fleet.items():
-        status = "Available" if details["available"] else "Rented"
+        status = "Available" if details["available"] else "Rented" 
         print(f"{vid:<5} | {details['name']:<15} | {details['type']:<10} | {details['rate']:<10.2f} | {status}")
 
 def main():
