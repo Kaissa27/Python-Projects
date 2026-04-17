@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 # Step 1: Get Wikipedia Article URL
 def get_wikipedia_page(topic):
-  url = f"https://en.wikipedia.org/wiki/{topic.replace(' ', '_')}"
+  url =  f"https://en.wikipedia.org/wiki/{topic.replace(' ', '_')}"
   response = requests.get(url)
   if response.status_code == 200:
     return response.text
