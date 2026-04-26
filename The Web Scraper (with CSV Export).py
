@@ -1,0 +1,43 @@
+import requests
+from bs4 import BeautifulSoup
+import csv
+
+def scrape_quotes():
+    # 1. Fetch the webpage
+    url = "http://quotes.toscrape.com/"
+    print(f"Connecting to {url}...")
+    response = requests.get(url)
+    
+    # Check if the connection was successful (Status Code 200)
+    if response.status_code != 200:
+        print("Failed to retrieve the webpage.")
+        return
+
+    # 2. Parse the HTML
+    soup = BeautifulSoup(response.text, 'html.parser')
+    
+    # 3. Find the data
+    # On this site, every quote is wrapped in a <div class="quote">
+    quotes_data = []
+    quote_blocks = soup.find_all('div', class_='quote')
+    
+    for block in quote_blocks:
+        # Extract the text and the author from inside the block
+        text = block.find('span', class_='text').text
+        author = block.find('small', class_='author').text
+        
+        # Clean up the text (remove the fancy quote marks)
+        clean_text = text.replace('“', '').replace('”', '')
+        quotes_data.append([author, clean_text])
+        
+    # 4. Save to CSV
+    print(f"Found {len(quotes_data)} quotes. Saving to CSV...")
+    with open('scraped_quotes.csv', 'w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        writer.writerow(['Author', 'Quote']) # Write the header row
+        writer.writerows(quotes_data)        # Write the data
+        
+    print("Success! Check your folder for 'scraped_quotes.csv'.")
+
+if __name__ == "__main__":
+    scrape_quotes()
