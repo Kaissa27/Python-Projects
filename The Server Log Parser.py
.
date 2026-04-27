@@ -1,0 +1,40 @@
+import re
+from collections import Counter
+
+def analyze_logs(file_path):
+    # Regex pattern to find the log level (INFO, ERROR, WARNING)
+    # This looks for a word between two hyphens or after a timestamp
+    log_pattern = r"- (INFO|ERROR|WARNING) -"
+    
+    log_counts = Counter()
+    errors_list = []
+
+    try:
+        with open(file_path, 'r') as file:
+            for line in file:
+                match = re.search(log_pattern, line)
+                if match:
+                    log_level = match.group(1)
+                    log_counts[log_level] += 1
+                    
+                    # If it's an error, let's capture the message
+                    if log_level == "ERROR":
+                        errors_list.append(line.strip())
+
+        # Generate a summary report
+        with open("log_summary.txt", "w") as report:
+            report.write("--- LOG ANALYSIS REPORT ---\n")
+            for level, count in log_counts.items():
+                report.write(f"{level}: {count}\n")
+            
+            report.write("\n--- RECENT ERROR MESSAGES ---\n")
+            for err in errors_list[-5:]:  # Only the last 5 errors
+                report.write(f"{err}\n")
+
+        print("Analysis complete. Check 'log_summary.txt'.")
+
+    except FileNotFoundError:
+        print("Log file not found. Please create 'server.log' first.")
+
+# To test this, create a file named 'server.log' with sample text!
+# analyze_logs("server.log")
