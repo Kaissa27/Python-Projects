@@ -13,7 +13,7 @@ def analyze_logs(file_path):
         with open(file_path, 'r') as file:
             for line in file:
                 match = re.search(log_pattern, line)
-                if match:
+                if match: 
                     log_level = match.group(1)
                     log_counts[log_level] += 1
                     
