@@ -1,0 +1,38 @@
+from datetime import datetime
+
+class DeadlineTracker:
+    def __init__(self):
+        self.projects = []
+
+    def add_project(self, name, deadline_str):
+        try:
+            # Convert string input (YYYY-MM-DD) into a datetime object
+            deadline = datetime.strptime(deadline_str, "%Y-%m-%d")
+            self.projects.append({"name": name, "deadline": deadline})
+            print(f"Project '{name}' added.")
+        except ValueError:
+            print("Invalid date format! Use YYYY-MM-DD.")
+
+    def show_status(self):
+        today = datetime.now()
+        print(f"\n--- Current Status (Today: {today.strftime('%Y-%m-%d')}) ---")
+        
+        for p in self.projects:
+            # Calculate the difference (returns a timedelta object)
+            time_left = p['deadline'] - today
+            days_left = time_left.days
+
+            if days_left < 0:
+                status = f"⚠️ OVERDUE by {abs(days_left)} days"
+            elif days_left == 0:
+                status = "🚨 DUE TODAY"
+            else:
+                status = f"✅ {days_left} days remaining"
+
+            print(f"{p['name']:<20} | {status}")
+
+# Implementation
+tracker = DeadlineTracker()
+tracker.add_project("Python App", "2026-05-15")
+tracker.add_project("Portfolio Site", "2026-04-01") # Example overdue
+tracker.show_status()
