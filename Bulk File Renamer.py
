@@ -1,0 +1,33 @@
+import os
+
+def bulk_rename(folder_path, base_name, extension):
+    # Ensure the path exists
+    if not os.path.exists(folder_path):
+        print("Error: Path does not exist.")
+        return
+
+    # Get a list of files with the specific extension
+    files = [f for f in os.listdir(folder_path) if f.lower().endswith(extension.lower())]
+    
+    # Sort them to maintain order
+    files.sort()
+
+    count = 1
+    for filename in files:
+        # Create a new name with zero-padding (e.g., 001, 002)
+        # :03 means "3 digits wide, filled with zeros"
+        new_name = f"{base_name}_{count:03}{extension}"
+        
+        old_file = os.path.join(folder_path, filename)
+        new_file = os.path.join(folder_path, new_name)
+
+        # Rename the file
+        try:
+            os.rename(old_file, new_file)
+            print(f"Renamed: {filename} -> {new_name}")
+            count += 1
+        except OSError as e:
+            print(f"Error renaming {filename}: {e}")
+
+# Example Usage:
+# bulk_rename("C:/Users/Name/Pictures/Summer2026", "Italy_Trip", ".jpg")
