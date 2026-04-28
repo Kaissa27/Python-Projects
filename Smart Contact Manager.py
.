@@ -1,0 +1,37 @@
+import json
+
+class ContactManager:
+    def __init__(self, filename="contacts.json"):
+        self.filename = filename
+        self.contacts = self.load_data()
+
+    def load_data(self):
+        try:
+            with open(self.filename, "r") as f:
+                return json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return {}
+
+    def save_data(self):
+        with open(self.filename, "w") as f:
+            json.dump(self.contacts, f, indent=4)
+
+    def add_contact(self, name, phone, email):
+        self.contacts[name.lower()] = {"phone": phone, "email": email}
+        self.save_data()
+        print(f"Contact {name} added.")
+
+    def search_contact(self, name):
+        name = name.lower()
+        if name in self.contacts:
+            info = self.contacts[name]
+            print(f"\nFound: {name.title()}")
+            print(f"Phone: {info['phone']}")
+            print(f"Email: {info['email']}")
+        else:
+            print("Contact not found.")
+
+# Example Usage
+manager = ContactManager()
+# manager.add_contact("Alice", "555-0199", "alice@email.com")
+# manager.search_contact("Alice")
