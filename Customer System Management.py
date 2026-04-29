@@ -4,7 +4,7 @@ def add_customer(crm):
     cust_id = input("Enter Customer ID: ").strip().upper()
     if cust_id in crm:
         print("Error: ID already exists.")
-        return
+        return 
         
     name = input("Enter Name: ").strip().title()
     email = input("Enter Email: ").strip()
