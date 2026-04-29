@@ -13,7 +13,7 @@ class BankAccount:
         self._add_transaction("Account Created", initial_balance)
 
     def _add_transaction(self, note, amount):
-        """Internal method to log activities."""
+        """Internal method to log activities.""" 
         entry = {
             "date": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
             "note": note,
