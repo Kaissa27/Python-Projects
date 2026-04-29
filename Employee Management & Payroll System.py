@@ -9,7 +9,7 @@ class Employee(ABC):
     # This forces every sub-class to have its own salary logic
     @abstractmethod
     def calculate_pay(self):
-        pass
+        pass 
 
     def __str__(self):
         return f"ID: {self.id_number} | Name: {self.name}"
