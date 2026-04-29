@@ -1,4 +1,4 @@
-import requests
+import requests 
 
 def get_weather(city):
     api_key = "your_api_key_here"  # Sign up at OpenWeatherMap
