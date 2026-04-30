@@ -7,7 +7,7 @@ class YouTubeMaster(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.title("Python Pro Downloader")
-        self.geometry("500x450")
+        self.geometry("500x450") 
         self.save_path = ""
 
         # --- UI ELEMENTS ---
