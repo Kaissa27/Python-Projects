@@ -1,6 +1,6 @@
 x=1
 ifx:
-   y=2
+   y=2 
    if y:
        print("block2")
    print("block1")
