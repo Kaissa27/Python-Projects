@@ -1,0 +1,40 @@
+    def check_out_book(self, book_id):
+        """Updates the availability of a book to False (0)."""
+        self.cursor.execute('''
+            UPDATE books 
+            SET available = 0 
+            WHERE id = ?
+        ''', (book_id,))
+        
+        if self.cursor.rowcount > 0:
+            self.conn.commit()
+            print(f"Book ID {book_id} has been checked out.")
+        else:
+            print("Book ID not found.")
+
+    def delete_book(self, book_id):
+        """Permanently removes a book from the database."""
+        # It's good practice to confirm the ID exists first
+        self.cursor.execute("DELETE FROM books WHERE id = ?", (book_id,))
+        
+        self.conn.commit()
+        print(f"Book ID {book_id} removed from inventory.")
+
+    def show_all_books(self):
+        """Fetches and displays every row in the table."""
+        self.cursor.execute("SELECT * FROM books")
+        rows = self.cursor.fetchall()
+        for row in rows:
+            print(row)
+
+# Implementation
+db = LibraryDB()
+# 1. Update: Mark the book with ID 1 as unavailable
+db.check_out_book(1)
+
+# 2. Delete: Remove a book by its ID
+db.delete_book(2)
+
+# 3. Read: See the final state
+db.show_all_books()
+db.close()
