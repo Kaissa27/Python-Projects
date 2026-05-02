@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import filedialog
 import pandas as pd
 from matplotlib.figure import Figure
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg 
 
 
 def load_file(file_path):
