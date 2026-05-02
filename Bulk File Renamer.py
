@@ -1,4 +1,4 @@
-import os
+import os 
 
 def bulk_rename(folder_path, base_name, extension):
     # Ensure the path exists
