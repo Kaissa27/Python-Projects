@@ -13,7 +13,7 @@ def calculate_stay(check_in, check_out, daily_rate):
     total = days * daily_rate
     return days, total
 
-def main():
+def main(): 
     rooms = {
         "101": {"type": "Standard", "rate": 100, "guest": None},
         "102": {"type": "Deluxe", "rate": 180, "guest": None},
