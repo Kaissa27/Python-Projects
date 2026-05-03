@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np 
 
 # Function to Get Matrix Input 
 def get_matrix():
