@@ -1,4 +1,4 @@
-def calculate_split():
+def calculate_split(): 
     print("--- Pro Bill Splitter ---")
     try:
         total_bill = float(input("Enter total bill amount: "))
