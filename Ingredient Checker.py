@@ -1,4 +1,4 @@
-# Ingredients Checker
+# Ingredients Checker 
 
 # Step 1: Define the recipe ingredients
 recipe_ingredients = {"flour", "sugar", "butter", "eggs", "milk"}
