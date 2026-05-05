@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from tkinter import filedialog
 import threading
-import yt_dlp
+import yt_dlp 
 
 class YouTubeMaster(ctk.CTk):
     def __init__(self):
