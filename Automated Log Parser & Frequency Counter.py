@@ -10,7 +10,7 @@ def analyze_logs():
         "[08:12] ERROR 192.168.1.50 Connection Reset",
         "[08:15] WARN 172.16.0.5 Disk Space Low",
         "[08:20] ERROR 10.0.0.1 Critical Failure",
-        "[08:22] INFO 192.168.1.1 Page Refresh"
+        "[08:22] INFO 192.168.1.1 Page Refresh" 
     ]
 
     print("--- Log Analysis Automation ---")
