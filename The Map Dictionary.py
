@@ -1,0 +1,41 @@
+def play_navigator():
+    # The Map: 'Room Name': { 'direction': 'Destination' }
+    world_map = {
+        'Hallway': {'north': 'Library', 'south': 'Garden', 'east': 'Kitchen'},
+        'Library': {'south': 'Hallway'},
+        'Kitchen': {'west': 'Hallway'},
+        'Garden':  {'north': 'Hallway'}
+    }
+
+    current_room = 'Hallway'
+    inventory = []
+
+    print("--- THE INFINITE NAVIGATOR ---")
+    print("Commands: 'go [direction]', 'quit'")
+
+    while True:
+        print(f"\nLocation: {current_room}")
+        print(f"Exits: {', '.join(world_map[current_room].keys())}")
+        
+        user_input = input("> ").lower().split()
+
+        # Handle quitting
+        if not user_input or user_input[0] == 'quit':
+            print("Thanks for playing!")
+            break
+
+        # Handle movement
+        if user_input[0] == 'go':
+            if len(user_input) > 1:
+                direction = user_input[1]
+                # Check if the direction exists in the current room
+                if direction in world_map[current_room]:
+                    current_room = world_map[current_room][direction]
+                else:
+                    print(f"You can't go {direction} from here.")
+            else:
+                print("Go where? (e.g., 'go north')")
+        else:
+            print("I don't understand that command.")
+
+# play_navigator()
