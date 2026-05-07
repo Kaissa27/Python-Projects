@@ -1,0 +1,51 @@
+import random
+import time
+
+def math_quiz():
+    num_questions = 5
+    score = 0
+    
+    print("--- SPEED MATH CHALLENGE ---")
+    print(f"Answer {num_questions} questions as fast as you can!")
+    input("Press Enter to START...")
+    
+    # Record the exact time the quiz starts
+    start_time = time.time()
+
+    for i in range(num_questions):
+        # Generate two random numbers and an operator
+        a = random.randint(1, 20)
+        b = random.randint(1, 20)
+        operation = random.choice(['+', '-'])
+        
+        # Calculate the correct answer
+        if operation == '+':
+            correct_answer = a + b
+        else:
+            correct_answer = a - b
+
+        # Ask the user
+        try:
+            user_answer = int(input(f"Q{i+1}: {a} {operation} {b} = "))
+            if user_answer == correct_answer:
+                print("Correct! ✅")
+                score += 1
+            else:
+                print(f"Wrong! ❌ The answer was {correct_answer}")
+        except ValueError:
+            print("Invalid input! Counts as wrong.")
+
+    # Record the time the quiz ends
+    end_time = time.time()
+    total_time = end_time - start_time
+
+    # Calculate results
+    print("\n--- QUIZ OVER ---")
+    print(f"Score: {score}/{num_questions}")
+    print(f"Total Time: {total_time:.2f} seconds")
+    
+    # Calculate "Speed" (Questions per second)
+    speed = num_questions / total_time
+    print(f"Your Speed: {speed:.2f} questions per second")
+
+# math_quiz()
