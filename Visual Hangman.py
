@@ -1,0 +1,95 @@
+def play_visual_hangman():
+    # ASCII art for the gallows (from 6 lives down to 0)
+    STAGES = [
+        """
+           --------
+           |      |
+           |      O
+           |     \\|/
+           |      |
+           |     / \\
+           -
+        """,
+        """
+           --------
+           |      |
+           |      O
+           |     \\|/
+           |      |
+           |     / 
+           -
+        """,
+        """
+           --------
+           |      |
+           |      O
+           |     \\|/
+           |      |
+           |      
+           -
+        """,
+        """
+           --------
+           |      |
+           |      O
+           |     \\|
+           |      |
+           |      
+           -
+        """,
+        """
+           --------
+           |      |
+           |      O
+           |      |
+           |      |
+           |      
+           -
+        """,
+        """
+           --------
+           |      |
+           |      O
+           |    
+           |      
+           |      
+           -
+        """,
+        """
+           --------
+           |      |
+           |      
+           |    
+           |      
+           |      
+           -
+        """
+    ]
+
+    word = "python"
+    display = ["_"] * len(word)
+    lives = 6
+    guessed = []
+
+    while lives > 0 and "_" in display:
+        # We use STAGES[lives] to show the correct drawing
+        print(STAGES[lives])
+        print(f"Word: {' '.join(display)}")
+        
+        guess = input("\nGuess a letter: ").lower()
+
+        if guess in word:
+            for i in range(len(word)):
+                if word[i] == guess:
+                    display[i] = guess
+        else:
+            lives -= 1
+            print(f"Wrong! {lives} lives left.")
+
+    if "_" not in display:
+        print("You won!")
+    else:
+        print(STAGES[0]) # Show the final dead man
+        print(f"Game Over. The word was {word}.")
+
+# play_visual_hangman()
