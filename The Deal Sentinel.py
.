@@ -1,0 +1,44 @@
+import requests
+from bs4 import BeautifulSoup
+from plyer import notification
+import time
+
+def price_alert_bot(target_price):
+    # Example: Tracking a specific item
+    url = "https://news.ycombinator.com/" # Using HN as a placeholder
+    headers = {"User-Agent": "Mozilla/5.0"}
+    
+    print(f"Bot started. Watching for prices below ${target_price}...")
+
+    while True:
+        try:
+            response = requests.get(url, headers=headers)
+            soup = BeautifulSoup(response.text, 'html.parser')
+
+            # --- REAL-WORLD LOGIC ---
+            # In a real scenario, you'd find the price tag:
+            # price_text = soup.find("span", class_="price").text
+            # price = float(price_text.replace("$", ""))
+            
+            # For this demo, let's simulate a random price drop
+            import random
+            price = random.randint(450, 550) 
+            
+            print(f"Current Price: ${price}")
+
+            if price <= target_price:
+                notification.notify(
+                    title="💰 PRICE DROP ALERT!",
+                    message=f"The item is now ${price}! Target was ${target_price}.",
+                    timeout=10
+                )
+                print("Notification sent! Alerting user...")
+                break # Stop the bot after the alert, or keep it running!
+
+        except Exception as e:
+            print(f"Error: {e}")
+        
+        # Check every 60 seconds
+        time.sleep(60)
+
+# price_alert_bot(480)
