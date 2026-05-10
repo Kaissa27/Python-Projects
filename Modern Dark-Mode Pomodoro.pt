@@ -1,0 +1,53 @@
+import tkinter as tk
+from tkinter import messagebox
+
+class PomodoroTimer:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Focus Flow")
+        self.root.geometry("300x400")
+        self.root.configure(bg="#2C3E50") # Dark Blue-Grey
+
+        self.time_left = 25 * 60
+        self.running = False
+
+        # 1. Modern Label
+        self.label = tk.Label(root, text="25:00", font=("Helvetica", 48, "bold"), 
+                              bg="#2C3E50", fg="#E67E22")
+        self.label.pack(pady=50)
+
+        # 2. Styled Buttons
+        self.start_btn = tk.Button(root, text="START", command=self.start_timer, 
+                                   bg="#27AE60", fg="white", font=("Arial", 12, "bold"),
+                                   width=10, relief="flat")
+        self.start_btn.pack(pady=10)
+
+        self.reset_btn = tk.Button(root, text="RESET", command=self.reset_timer, 
+                                   bg="#E74C3C", fg="white", font=("Arial", 12, "bold"),
+                                   width=10, relief="flat")
+        self.reset_btn.pack(pady=10)
+
+    def update_timer(self):
+        if self.running and self.time_left > 0:
+            mins, secs = divmod(self.time_left, 60)
+            self.label.config(text=f"{mins:02d}:{secs:02d}")
+            self.time_left -= 1
+            # The Magic: Run this function again in 1000ms (1 second)
+            self.root.after(1000, self.update_timer)
+        elif self.time_left == 0:
+            self.running = False
+            messagebox.showinfo("Break Time!", "Great job! Take a 5-minute break.")
+
+    def start_timer(self):
+        if not self.running:
+            self.running = True
+            self.update_timer()
+
+    def reset_timer(self):
+        self.running = False
+        self.time_left = 25 * 60
+        self.label.config(text="25:00")
+
+root = tk.Tk()
+app = PomodoroTimer(root)
+root.mainloop()
