@@ -1,0 +1,40 @@
+import requests
+from bs4 import BeautifulSoup
+import os
+
+def download_images(url, folder_name):
+    # 1. Create the folder if it doesn't exist
+    if not os.path.exists(folder_name):
+        os.makedirs(folder_name)
+
+    headers = {"User-Agent": "Mozilla/5.0"}
+    response = requests.get(url, headers=headers)
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # 2. Find all <img> tags
+    images = soup.find_all('img')
+    print(f"Found {len(images)} images. Starting download...")
+
+    for i, img in enumerate(images):
+        try:
+            # Get the image source URL
+            img_url = img.get('src')
+            
+            # Handle relative URLs (e.g., /images/logo.png)
+            if not img_url.startswith('http'):
+                img_url = url + img_url
+
+            # 3. Download the actual image bytes
+            img_data = requests.get(img_url).content
+            
+            # 4. Save to the folder
+            file_path = os.path.join(folder_name, f"image_{i+1}.jpg")
+            with open(file_path, 'wb') as f: # 'wb' means Write Binary
+                f.write(img_data)
+                
+            print(f"Saved: {file_path}")
+
+        except Exception as e:
+            print(f"Could not download image {i}: {e}")
+
+# download_images('https://www.example-photography-site.com', 'MyScrapedImages')
