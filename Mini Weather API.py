@@ -10,7 +10,7 @@ weather_data = {
     "sydney": {"temperature": 18, "condition": "Rainy"}
 }
 
-# Root Endpoint
+# Root Endpoint 
 @app.route('/')
 def home():
     return jsonify({"message": "Welcome to the Mini Weather API!"})
