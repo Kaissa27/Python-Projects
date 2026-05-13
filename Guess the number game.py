@@ -1,4 +1,4 @@
-import random
+import random 
 
 def main():
     target = random.randint(1, 100
