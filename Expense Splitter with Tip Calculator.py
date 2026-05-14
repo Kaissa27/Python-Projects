@@ -12,6 +12,6 @@ def calculate_split():
         print(f"Each person owes: ${share:.2f}")
         
     except ValueError:
-        print("Invalid input! Please enter numbers only.")
+        print("Invalid input! Please enter numbers only.") 
 
 # calculate_split()
