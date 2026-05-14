@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod 
 
-# 1. Abstract Base Class 
+# 1. Abstract Base Class  
 class Employee(ABC):
     def __init__(self, name, id_number):
         self.name = name
