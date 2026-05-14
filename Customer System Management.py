@@ -1,4 +1,4 @@
-import sys 
+import sys
 
 def add_customer(crm):
     cust_id = input("Enter Customer ID: ").strip().upper()
