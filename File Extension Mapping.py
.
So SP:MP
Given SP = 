@@ -1,5 +1,5 @@
 import os
-import shutil 
+import shutil
 
 def organize_folder(target_path):
     # 1. Define the categories
