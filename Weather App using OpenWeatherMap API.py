@@ -1,4 +1,4 @@
-# Weather App using OpenWeatherMap API
+# Weather App using OpenWeatherMap API 
 import requests
 
 #Step 1: API SETUP
