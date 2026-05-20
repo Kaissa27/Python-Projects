@@ -1,4 +1,4 @@
-def generate_pyramid():
+def generate_pyramid(): 
     try:
         rows = int(input("Enter number of rows: "))
         char = input("Enter a single character: ")[:1] or "*"
