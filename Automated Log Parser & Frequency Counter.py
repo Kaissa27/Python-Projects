@@ -1,4 +1,4 @@
-import collections
+import collections 
 
 def analyze_logs():
     # Simulated log data (as if read from a file 'server.log')
