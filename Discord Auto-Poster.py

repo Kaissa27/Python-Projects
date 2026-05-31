@@ -1,0 +1,35 @@
+import requests
+import time
+
+DISCORD_WEBHOOK_URL = "YOUR_DISCORD_WEBHOOK_URL_HERE"
+
+def fetch_and_post_update():
+    """Fetches trending tech news and updates a Discord server via webhook."""
+    # 1. Gather our content from a public API
+    api_url = "https://api.spaceflightnewsapi.net/v4/articles/?limit=1"
+    
+    try:
+        response = requests.get(api_url).json()
+        article = response['results'][0]
+        title = article['title']
+        article_url = article['url']
+        
+        # 2. Structure our outbound network payload
+        payload = {
+            "content": f"🚀 **Automated Space Update:**\n**{title}**\nRead more here: {article_url}"
+        }
+        
+        # 3. Deliver payload across the web webhook pipeline
+        if DISCORD_WEBHOOK_URL != "YOUR_DISCORD_WEBHOOK_URL_HERE":
+            requests.post(DISCORD_WEBHOOK_URL, json=payload)
+            print("Payload dispatched to Discord.")
+        else:
+            print(f"[Dry Run Simulation] Would post: {title}")
+            
+    except Exception as e:
+        print(f"Pipeline broke down: {e}")
+
+# Automate execution loop to check every hour
+# while True:
+#     fetch_and_post_update()
+#     time.sleep(3600)
