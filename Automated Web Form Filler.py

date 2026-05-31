@@ -1,0 +1,32 @@
+# Note: Requires 'pip install playwright' and 'playwright install'
+from playwright.sync_api import sync_playwright
+import time
+
+def auto_form_filler():
+    # Mock data that would normally come from an Excel sheet or API
+    user_data = [
+        {"name": "Alice Smith", "email": "alice@example.com", "msg": "Awesome automation service!"},
+        {"name": "Bob Jones", "email": "bob@example.com", "msg": "Looking forward to working together."}
+    ]
+
+    with sync_playwright() as p:
+        # Launch a visible browser instance (headless=False)
+        browser = p.chromium.launch(headless=False)
+        page = browser.new_page()
+        
+        # Navigate to a dummy form or registration page
+        page.goto("https://demo.playwright.dev/todomvc/") # Placeholder URL
+        print("Browser loaded. Commencing automated inputs...")
+        
+        for user in user_data:
+            # In a real scenario, you use CSS selectors to target inputs:
+            # page.fill('input[name="username"]', user["name"])
+            # page.fill('input[type="email"]', user["email"])
+            # page.click('button[type="submit"]')
+            
+            print(f"Successfully processed profile: {user['name']}")
+            time.sleep(1) # Intentional delay to look human and avoid anti-bot blocks
+            
+        browser.close()
+
+# auto_form_filler()
