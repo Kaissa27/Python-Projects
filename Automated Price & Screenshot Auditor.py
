@@ -1,0 +1,48 @@
+from playwright.sync_api import sync_playwright
+import time
+
+def run_browser_audit():
+    # 1. Initialize the automation controller
+    with sync_playwright() as p:
+        # Launching a visible browser instance so we can watch it work
+        # slow_mo puts a 500ms delay between actions so it looks completely human
+        browser = p.chromium.launch(headless=False, slow_mo=500)
+        
+        # Open a new, isolated browsing context (simulates a clean, incognito window)
+        context = browser.new_context(viewport={"width": 1280, "height": 720})
+        page = context.new_page()
+
+        print("🌐 Launching browser engine and navigating...")
+        # Go to Wikipedia as a reliable sandbox for automation testing
+        page.goto("https://www.wikipedia.org/")
+
+        # 2. Interact with the Search Input UI Component
+        # Playwright uses CSS selectors to find elements
+        print("🔍 Typing search query dynamically...")
+        page.fill("input#searchInput", "Python (programming language)")
+        
+        # Press Enter key to submit the search form
+        page.press("input#searchInput", "Enter")
+
+        # 3. Wait for Async Content to Load
+        # Instead of generic time.sleep(), we wait for a specific element to appear in the HTML DOM
+        print("⏳ Waiting for page layout to stabilize...")
+        page.wait_for_selector("h1#firstHeading")
+
+        # Extract the title text directly from the live rendered page state
+        page_title = page.inner_text("h1#firstHeading")
+        print(f"📄 Arrived at target page: '{page_title}'")
+
+        # 4. Scroll and Capture Evidence
+        print("📸 Capturing full-page visual archive...")
+        # Automatically scrolls down the webpage to stitch a complete high-res image
+        page.screenshot(path="python_wiki_audit.png", full_page=True)
+        print("💾 Screenshot successfully saved as 'python_wiki_audit.png'")
+
+        # Clean up memory allocation by shutting down operations
+        context.close()
+        browser.close()
+        print("🔒 Automation engine deactivated successfully.")
+
+if __name__ == "__main__":
+    run_browser_audit()
