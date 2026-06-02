@@ -1,0 +1,11 @@
+import pandas as pd
+
+# Creating a mock list of items our business needs to audit
+data = {
+    "SearchTerm": ["Python (programming language)", "Web scraping", "Automation"],
+    "TargetStatus": ["Pending", "Pending", "Pending"]
+}
+
+df = pd.DataFrame(data)
+df.to_csv("search_queries.csv", index=False)
+print("Input spreadsheet 'search_queries.csv' generated!")
