@@ -1,4 +1,4 @@
-import sys 
+import sys
 
 def calculate_pay(salary):
     tax_rate = 0.20
