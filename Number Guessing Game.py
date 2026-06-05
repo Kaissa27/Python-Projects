@@ -14,12 +14,12 @@ def guess_the_number():
             continue
 
         if guess == secret:
-            print(f"🎉 You win! The number was {secret}.")
+            print(f" You win! The number was {secret}.")
             return
         elif guess < secret:
-            print("Too low! ⬆️")
+            print("Too low! ")
         else:
-            print("Too high! ⬇️")
+            print("Too high! ")
         
         lives -= 1
 
