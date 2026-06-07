@@ -1,4 +1,3 @@
-# Mini ATM Machine
 
 class BankAccount: 
     def __init__(self, account_number, pin, balance=0):
