@@ -3,7 +3,7 @@ def calculate_split():
     try:
         total_bill = float(input("Enter total bill amount: "))
         tip_percentage = float(input("Enter tip percentage (e.g. 15): "))
-        people = int(input("How many people are splitting? "))
+        people = int(input("How many people are splitting? ")) 
         
         grand_total = total_bill * (1 + tip_percentage / 100)
         share = grand_total / people
