@@ -27,7 +27,7 @@
         for row in rows:
             print(row)
 
-# Implementation
+# Implementation 
 db = LibraryDB()
 # 1. Update: Mark the book with ID 1 as unavailable
 db.check_out_book(1)
