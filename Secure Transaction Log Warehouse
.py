@@ -41,4 +41,4 @@ if __name__ == "__main__":
     
     print("\n--- 📊 DATA WAREHOUSE AGGREGATE REPORT ---")
     for asset, total, count in db.generate_aggregate_report():
-        print(f"🔹 Asset: {asset:<15} Total Value: ${total:>10,.2f} [Entries: {count}]")
+        print(f"🔹 Asset: {asset:<15} Total Value: ${total:>10,.2f} [Entries: {count}]") 
