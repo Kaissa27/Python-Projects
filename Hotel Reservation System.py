@@ -1,5 +1,5 @@
 import sys 
-from datetime import datetime
+from datetime import datetime 
 
 def calculate_stay(check_in, check_out, daily_rate):
     fmt = "%Y-%m-%d"
