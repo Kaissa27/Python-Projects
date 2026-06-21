@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod 
 
 # 1. Abstract Base Class  
 class Employee(ABC):
