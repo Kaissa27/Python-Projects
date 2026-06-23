@@ -3,7 +3,7 @@ import time
 
 def dice_casino():
     wallet = 100
-    print("--- 🎲 WELCOME TO THE PYTHON CASINO 🎲 ---")
+    print("--- WELCOME TO THE PYTHON CASINO 🎲 ---")
     print(f"You're starting with: ${wallet}")
 
     while wallet > 0:
