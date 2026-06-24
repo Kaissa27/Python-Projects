@@ -11,7 +11,7 @@ celery_app = Celery(
 @celery_app.task(bind=True)
 def heavy_data_scraping_job(self, iterations: int):
     """Simulates a heavy, long-running extraction or ML training computation."""
-    print(f"🚀 Background Worker accepted job. Processing {iterations} nodes...")
+    print(f" Background Worker accepted job. Processing {iterations} nodes...")
     
     for i in range(iterations):
         # Update progress metadata back to Redis for live tracking
@@ -21,5 +21,5 @@ def heavy_data_scraping_job(self, iterations: int):
         )
         time.sleep(0.5) # Simulating dynamic page rendering or model training delays
         
-    print("✅ Background task complete!")
+    print(" Background task complete!")
     return {"status": "Complete", "processed_records": iterations}
