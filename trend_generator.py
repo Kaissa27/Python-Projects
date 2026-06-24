@@ -35,7 +35,7 @@ def generate_performance_trends():
     # Render and dump chart file directly to host machine disc storage
     plt.savefig("system_telemetry_profile.png", dpi=300)
     plt.close()
-    print("💾 High-definition visualization compiled and written to: 'system_telemetry_profile.png'")
+    print(" High-definition visualization compiled and written to: 'system_telemetry_profile.png'")
 
 if __name__ == "__main__":
     generate_performance_trends()
