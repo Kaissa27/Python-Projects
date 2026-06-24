@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
 def run_predictive_pipeline():
-    print("🚀 Initializing Predictive Machine Learning Pipeline...")
+    print(" Initializing Predictive Machine Learning Pipeline...")
     
     # 1. DATA GENERATION LAYER (Simulating historic corporate metric data)
     # Let's say we are tracking 100 historical months of corporate operations
@@ -33,8 +33,8 @@ def run_predictive_pipeline():
     model = LinearRegression()
     model.fit(X_train, y_train) # The computer calculates the mathematical weights here
     
-    print(f"📈 Model Training Complete. Baseline Revenue: ${model.intercept_:.2f}K")
-    print(f"📊 Weight Coefficient: For every $1K spent, revenue rises by ${model.coef_[0]:.2f}K")
+    print(f" Model Training Complete. Baseline Revenue: ${model.intercept_:.2f}K")
+    print(f" Weight Coefficient: For every $1K spent, revenue rises by ${model.coef_[0]:.2f}K")
 
     # 4. EVALUATION & TESTING MATRIX
     # Ask the trained model to predict values on our unseen test dataset
@@ -42,7 +42,7 @@ def run_predictive_pipeline():
 
     # Calculate statistical performance markers
     r2 = r2_score(y_test, y_pred) # Coefficient of determination (Max 1.0)
-    print(f"🎯 Model Accuracy Variance (R² Score): {r2:.2f}")
+    print(f" Model Accuracy Variance (R² Score): {r2:.2f}")
 
     # 5. FORECASTING FUTURE SCENARIOS (Predicting the Unknown)
     # What happens if executive leadership allocates $350K to marketing next month?
@@ -65,7 +65,7 @@ def run_predictive_pipeline():
     
     plt.savefig("predictive_revenue_model.png", dpi=300)
     plt.close()
-    print("💾 Predictive visual analysis chart successfully saved to disk as 'predictive_revenue_model.png'")
+    print(" Predictive visual analysis chart successfully saved to disk as 'predictive_revenue_model.png'")
 
 if __name__ == "__main__":
     run_predictive_pipeline()
