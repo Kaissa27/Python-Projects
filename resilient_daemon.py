@@ -93,4 +93,4 @@ def main():
         logging.critical(f"Fatal crash inside pipeline main coordinator loop: {e}")
 
 if __name__ == "__main__":
-    main()
+    main() 
