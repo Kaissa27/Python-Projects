@@ -1,0 +1,85 @@
+import pygame
+import random
+import sys
+
+# Initialize Pygame core graphics drivers
+pygame.init()
+
+# 1. SCREEN SETUP MATRIX
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Enterprise Particle Vector Engine")
+clock = pygame.time.Clock()
+
+# Color Configuration Palette
+BLACK = (0, 0, 0)
+
+class PhysicsParticle:
+    """Represents an isolated, vector-driven graphical node."""
+    def __init__(self, x: float, y: float):
+        self.x = x
+        self.y = y
+        # Generate random velocity vectors (Speed and Direction)
+        self.vx = random.uniform(-4, 4)
+        self.vy = random.uniform(-7, -2)
+        self.radius = random.randint(4, 8)
+        self.color = (random.randint(100, 255), random.randint(50, 150), random.randint(200, 255))
+        self.gravity = 0.15
+        self.lifetime = 255 # Corresponds directly to alpha/transparency decay
+
+    def update(self):
+        """Computes kinematics math for the particle frame."""
+        self.vy += self.gravity # Apply downward environmental acceleration
+        self.x += self.vx
+        self.y += self.vy
+        self.lifetime -= 3.5 # Decay particle survival lifespan
+
+    def draw(self, surface):
+        """Renders the entity to the target surface."""
+        if self.lifetime > 0:
+            # Draw particle on screen
+            pygame.draw.circle(surface, self.color, (int(self.x), int(self.y)), self.radius)
+
+# =====================================================================
+# 2. THE MASTER GAME LOOP
+# =====================================================================
+def run_engine_loop():
+    particles = []
+    running = True
+
+    while running:
+        # Step A: Process User Input Events
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+                
+        # Interactive Input Hook: Spawns particles at the cursor location when clicked
+        if pygame.mouse.get_pressed()[0]:
+            mx, my = pygame.mouse.get_pos()
+            for _ in range(5): # Spawn sub-bursts
+                particles.append(PhysicsParticle(mx, my))
+
+        # Step B: Update System Calculations
+        for particle in particles:
+            particle.update()
+
+        # RETAIN AND CLEANUP FILTER: Drops dead particles out of RAM memory arrays automatically
+        particles = [p for p in particles if p.lifetime > 0]
+
+        # Step C: Render Frame Graphics
+        screen.fill(BLACK) # Wipe previous screen frame buffer
+        
+        for particle in particles:
+            particle.draw(screen)
+
+        # Flip the virtual memory frame buffer onto the physical screen monitor
+        pygame.display.flip()
+        
+        # Enforce exact system frame rate pacing (Locked to 60 FPS)
+        clock.tick(60)
+
+    pygame.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    run_engine_loop()
