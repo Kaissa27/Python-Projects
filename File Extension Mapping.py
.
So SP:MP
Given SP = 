@@ -1,4 +1,4 @@
-import os 
+import os
 import shutil
 
 def organize_folder(target_path):
