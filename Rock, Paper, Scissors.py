@@ -1,4 +1,4 @@
-import random
+import random 
 
 def rps_game():
     options = ["rock", "paper", "scissors"]
