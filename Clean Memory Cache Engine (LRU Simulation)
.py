@@ -21,7 +21,7 @@ class MemoryCacheEngine:
         if len(self.cache) > self.capacity:
             oldest_key = next(iter(self.cache))
             self.cache.pop(oldest_key)
-            print(f"🧹 Storage Threshold Met. Evicted oldest cache node: [{oldest_key}]")
+            print(f" Storage Threshold Met. Evicted oldest cache node: [{oldest_key}]")
 
 # Test Cache Engine
 if __name__ == "__main__":
