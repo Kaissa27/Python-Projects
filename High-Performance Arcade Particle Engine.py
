@@ -14,7 +14,7 @@ clock = pygame.time.Clock()
 # Color Configuration Palette
 BLACK = (0, 0, 0)
 
-class PhysicsParticle:
+class PhysicsParticle: 
     """Represents an isolated, vector-driven graphical node."""
     def __init__(self, x: float, y: float):
         self.x = x
