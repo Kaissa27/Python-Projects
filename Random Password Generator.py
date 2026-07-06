@@ -1,6 +1,6 @@
 # Random Password Generator
 
-import math
+import math 
 
 print(math.sqrt(16))
 
