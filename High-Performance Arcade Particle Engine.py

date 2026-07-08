@@ -5,7 +5,7 @@ import sys
 # Initialize Pygame core graphics drivers
 pygame.init()
 
-# 1. SCREEN SETUP MATRIX
+# 1. SCREEN SETUP MATRIX 
 WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Enterprise Particle Vector Engine")
