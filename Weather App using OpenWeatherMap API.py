@@ -1,5 +1,5 @@
 # Weather App using OpenWeatherMap API 
-import requests
+import requests 
 
 #Step 1: API SETUP
 API_KEY = "da513525dc95d836a8c654fb317bd28b"
