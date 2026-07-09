@@ -49,7 +49,7 @@ def main():
         elif choice == "3":
             view_tasks(todo_list)
         elif choice == "4":
-            sys.exit()
+            sys.exit() 
         else:
             print("Invalid selection.")
 
