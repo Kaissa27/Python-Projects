@@ -1,4 +1,4 @@
-import sys
+import sys 
 
 def view_schedule(appointments):
     print(f"\n{'Doctor':<12} | {'Time Slot':<10} | {'Patient Name'}")
