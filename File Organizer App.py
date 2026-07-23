@@ -1,4 +1,4 @@
-import os 
+import os
 import shutil
 
 def create_folders(base_path):
