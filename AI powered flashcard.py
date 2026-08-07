@@ -46,7 +46,7 @@ def quiz():
     cards = conn.execute("SELECT * FROM cards WHERE due_date <=?", (today,)).fetchall()
 
     if not cards:
-        console.print("[green]No cards due today! 🎉[/green]")
+        console.print("[green]No cards due today! [/green]")
         return
 
     random.shuffle(cards)
