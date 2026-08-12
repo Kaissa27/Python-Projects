@@ -39,4 +39,4 @@ if st.button("Check Score") and resume_file and job_desc:
     jd_words = set(job_desc.lower().split())
     resume_words = set(resume_text.lower().split())
     missing = jd_words - resume_words
-    st.write("**Missing Keywords:**", ", ".join(list(missing)[:15]))
+    st.write("**Missing Keywords:**", ", ".join(list(missing)[:15])) 
