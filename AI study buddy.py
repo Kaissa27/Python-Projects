@@ -2,7 +2,7 @@ import streamlit as st
 import pypdf
 import sqlite3
 
-st.title("🧠 AI Study Buddy")
+st.title("AI Study Buddy")
 
 uploaded_file = st.file_uploader("Upload Notes PDF", type=["pdf"])
 
