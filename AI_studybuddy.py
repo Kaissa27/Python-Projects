@@ -10,7 +10,7 @@ from langchain.callbacks import get_openai_callback
 # For free local LLM, we use HuggingFace models
 # No OpenAI key needed
 
-st.title("📖 AI Study Buddy")
+st.title(" AI Study Buddy")
 st.write("Upload your PDF and ask anything about it")
 
 uploaded_file = st.file_uploader("Upload PDF", type="pdf")
