@@ -75,4 +75,4 @@ if __name__ == "__main__":
             conn.execute("INSERT INTO cards(front,back) VALUES (?,?)", (f,b))
             conn.commit(); conn.close()
         elif choice == "2": quiz()
-        else: break
+        else: break 
