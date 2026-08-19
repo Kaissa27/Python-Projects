@@ -17,3 +17,7 @@ def get_channel_stats(channel_id):
     data = response['items'][0]
     return {
         'title
+
+
+pip install streamlit pandas plotly
+streamlit run youtube_dashboard.py
