@@ -1,0 +1,41 @@
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+st.set_page_config(page_title="Mental Health Analysis", layout="wide")
+st.title("🧠 Student Mental Health Analysis")
+
+@st.cache_data
+def load_data():
+    df = pd.read_csv("student_mental_health.csv") # Kaggle dataset
+    return df
+
+df = load_data()
+
+# KPIs
+col1, col2, col3, col4 = st.columns(4)
+col1.metric("Total Students", len(df))
+col2.metric("High Stress %", f"{(df['stress_level']>7).mean()*100:.1f}%")
+col3.metric("Avg Sleep", f"{df['sleep_hours'].mean():.1f} hrs")
+col4.metric("Avg Screen Time", f"{df['screen_time'].mean():.1f} hrs")
+
+# Row 1
+col1, col2 = st.columns(2)
+
+with col1:
+    st.subheader("Stress Level Distribution")
+    fig1 = px.histogram(df, x='stress_level', nbins=10)
+    st.plotly_chart(fig1, use_container_width=True)
+
+with col2:
+    st.subheader("Stress vs Sleep Hours")
+    fig2 = px.scatter(df, x='sleep_hours', y='stress_level', color='gender')
+    st.plotly_chart(fig2)
+
+# Correlation Heatmap
+st.subheader("What Factors Affect Stress?")
+cols = ['stress_level', 'sleep_hours', 'screen_time', 'study_hours', 'social_media_hours']
+corr = df[cols].corr()
+fig3, ax = plt
