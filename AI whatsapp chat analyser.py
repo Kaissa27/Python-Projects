@@ -31,7 +31,7 @@ if chat_file:
     wc = WordCloud().generate(text)
     fig, ax = plt.subplots()
     ax.imshow(wc)
-    st.pyplot(fig)
+    st.pyplot(fig) 
 
     if st.button("AI Summary"):
         sample = "\n".join(df['Message'].tail(100))
