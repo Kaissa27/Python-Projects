@@ -22,7 +22,7 @@ def generate_questions(text):
 if uploaded_file:
     text = extract_text(uploaded_file)
     st.success("Notes loaded!")
-    
+     
     if st.button("Generate Quiz"):
         questions = generate_questions(text)
         for i, q in enumerate(questions):
