@@ -34,7 +34,7 @@ if st.button("Generate Today's News"):
     news_list = get_news(category)
     full_text = " ".join(news_list)
     
-    st.subheader("Summary")
+    st.subheader("Summary") 
     for n in news_list:
         st.write(f"- {n[:200]}...")
     
