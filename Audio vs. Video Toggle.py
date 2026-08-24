@@ -21,7 +21,7 @@ class YouTubeMaster(ctk.CTk):
         self.format_menu = ctk.CTkSegmentedButton(self, values=["Video (MP4)", "Audio (MP3)"], variable=self.format_var)
         self.format_menu.pack(pady=10)
 
-        self.path_btn = ctk.CTkButton(self, text="📁 Choose Folder", fg_color="gray25", command=self.select_path)
+        self.path_btn = ctk.CTkButton(self, text="Choose Folder", fg_color="gray25", command=self.select_path)
         self.path_btn.pack(pady=10)
 
         self.progress_bar = ctk.CTkProgressBar(self, width=400)
