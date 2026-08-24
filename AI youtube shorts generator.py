@@ -3,7 +3,7 @@ from moviepy.editor import *
 from gtts import gTTS
 import google.generativeai as genai
 
-st.title("🎬 AI YouTube Shorts Generator")
+st.title("AI YouTube Shorts Generator")
 
 topic = st.text_input("Video Topic", "3 Productivity Hacks for Students")
 
