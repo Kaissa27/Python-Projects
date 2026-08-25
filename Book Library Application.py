@@ -36,7 +36,7 @@ def main():
     my_library.add_book("1984", "George Orwell")
 
     while True:
-        print("\n1. View Books\n2. Add Book\n3. Borrow Book\n4. Exit")
+        print("\n1. View Books\n2. Add Book\n3. Borrow Book\n4. Exit") 
         choice = input("Select: ")
 
         if choice == "1":
