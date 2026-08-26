@@ -90,3 +90,8 @@ st.write(f"2. **Chasing Teams Win**: {chasing_wins/len(filtered)*100:.1f}% of ma
 st.write(f"3. **Toss Impact**: Teams winning toss win {len(toss_win)/len(filtered)*100:.1f}% matches")
 
 st.download_button("Download Filtered Data", filtered.to_csv(index=False).encode(), "ipl_filtered.csv")
+
+
+
+pip install streamlit plotly pandas
+streamlit run ipl_dashboard.py
