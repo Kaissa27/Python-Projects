@@ -4,7 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 st.set_page_config(page_title="IPL Analytics", layout="wide")
-st.title("🏏 IPL Analytics Dashboard 2008-2024")
+st.title(" IPL Analytics Dashboard 2008-2024")
 
 # Load Data
 @st.cache_data
