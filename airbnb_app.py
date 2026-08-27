@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 
 st.set_page_config(page_title="Airbnb Analytics", layout="wide")
-st.title("🏠 Airbnb Price Predictor & Analytics")
+st.title("Airbnb Price Predictor & Analytics")
 
 @st.cache_data
 def load_data():
@@ -16,7 +16,7 @@ def load_data():
 df = load_data()
 
 # --- SIDEBAR PREDICTOR ---
-st.sidebar.header("💸 Predict Your Listing Price")
+st.sidebar.header("Predict Your Listing Price")
 room = st.sidebar.selectbox("Room Type", df['room_type'].unique())
 neigh = st.sidebar.selectbox("Area", df['neighbourhood_group'].unique())
 min_nights = st.sidebar.slider("Minimum Nights", 1, 30, 3)
@@ -54,7 +54,7 @@ with c4:
     st.map(df.sample(1000)[['latitude','longitude']].dropna())
 
 # --- ML MODEL ---
-st.subheader("🤖 ML Price Predictor (Random Forest)")
+st.subheader(" ML Price Predictor (Random Forest)")
 df_model = df[['room_type','neighbourhood_group','minimum_nights','number_of_reviews','availability_365','price']].copy()
 df_model = pd.get_dummies(df_model, columns=['room_type','neighbourhood_group'])
 
