@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(page_title="Amazon Sales Dashboard", layout="wide")
-st.title("🛒 Amazon Sales Analytics")
+st.title("Amazon Sales Analytics")
 
 @st.cache_data
 def load_data():
@@ -54,10 +54,10 @@ with col2:
     st.plotly_chart(fig4)
 
 # Insights
-st.subheader("🔍 Key Business Insights")
+st.subheader(" Key Business Insights")
 st.write("1. **Size L** is most ordered - stock more of it")
 st.write("2. **Maharashtra** gives max revenue - run ads there")
 st.write("3. **Shipped - Delivered to Buyer** is 85% - but focus on Reducing Cancelled")
 st.write("4. **Kurta** category is top seller - bundle it")
 
-st.download_button("📥 Download Cleaned Data", df.to_csv(index=False).encode(), "amazon_analysis.csv")
+st.download_button(" Download Cleaned Data", df.to_csv(index=False).encode(), "amazon_analysis.csv")
