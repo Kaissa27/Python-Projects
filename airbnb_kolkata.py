@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
 st.set_page_config(page_title="Kolkata AirBnB", layout="wide")
-st.title("🏠 Kolkata AirBnB Price Predictor")
+st.title("Kolkata AirBnB Price Predictor")
 
 @st.cache_data
 def load_data():
@@ -24,7 +24,7 @@ col3.metric("Most Expensive Area", df.groupby('neighbourhood')['price'].mean().i
 col4.metric("Avg Reviews", f"{df['reviews'].mean():.1f}")
 
 # Map
-st.subheader("📍 Listings Map")
+st.subheader(" Listings Map")
 fig_map = px.scatter_mapbox(df, lat="latitude", lon="longitude",
                             color="price", size="reviews",
                             hover_name="neighbourhood",
@@ -45,7 +45,7 @@ with col2:
     st.plotly_chart(fig2)
 
 # ===== ML MODEL =====
-st.subheader("🤖 Predict Your Listing Price")
+st.subheader(" Predict Your Listing Price")
 
 # Preprocess
 le_hood = LabelEncoder()
