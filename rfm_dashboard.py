@@ -5,7 +5,7 @@ from sklearn.cluster import KMeans
 from datetime import datetime
 
 st.set_page_config(layout="wide")
-st.title("👥 Customer Segmentation - RFM + K-Means")
+st.title(" Customer Segmentation - RFM + K-Means")
 
 @st.cache_data
 def load():
@@ -59,19 +59,19 @@ with c2:
 
 c3,c4 = st.columns(2)
 with c3:
-    st.subheader("📊 Segment-wise Revenue")
+    st.subheader(" Segment-wise Revenue")
     seg_rev = rfm.groupby('Segment')['Monetary'].sum().reset_index()
     fig = px.bar(seg_rev, x='Segment', y='Monetary', color='Segment')
     st.plotly_chart(fig, use_container_width=True)
 with c4:
-    st.subheader("📈 RFM Distribution")
+    st.subheader("RFM Distribution")
     fig = px.box(rfm, y=['Recency','Frequency','Monetary'])
     st.plotly_chart(fig, use_container_width=True)
 
 st.subheader("📋 RFM Table")
 st.dataframe(rfm.sort_values('Monetary', ascending=False))
 
-with st.expander("📌 Resume Point"):
+with st.expander(" Resume Point"):
     st.code("Built RFM-based Customer Segmentation model using K-Means (4 clusters) on 800+ customers, identified VIP & Churned segments driving 65% revenue, deployed via Streamlit for targeted marketing strategy.")
 
-st.success("✅ Project 21 Done - This project alone can get you shortlisted for Product Analyst roles")
+st.success(" Project Done - This project alone can get you shortlisted for Product Analyst roles")
