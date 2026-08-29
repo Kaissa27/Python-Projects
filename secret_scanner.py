@@ -70,7 +70,7 @@ def run_code_audit(target_directory):
                 total_files += 1
                 file_path = os.path.join(root, file)
                 
-                results = scan_file_for_secrets(file_path)
+                results =  scan_file_for_secrets(file_path)
                 
                 if results:
                     flagged_files += 1
