@@ -89,7 +89,7 @@ def run_scanner(target):
     print("=" * 65)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     try:
         run_scanner(TARGET_HOST)
     except KeyboardInterrupt:
