@@ -40,7 +40,7 @@ with c2:
     fig2 = px.bar(genre_avg, x='track_genre', y='popularity', color='popularity', color_continuous_scale='Viridis')
     st.plotly_chart(fig2, use_container_width=True)
 
-c3, c4 = st.columns(2)
+c3, c4 = st.columns(2) 
 with c3:
     st.subheader("Danceability vs Energy (What makes a hit?)")
     fig3 = px.scatter(filtered_df.sample(5000), x='danceability', y='energy', color='popularity', size='loudness', hover_name='track_name')
