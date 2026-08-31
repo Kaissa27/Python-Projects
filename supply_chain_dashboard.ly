@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(page_title="Supply Chain Dashboard", layout="wide")
-st.title("🚚 Supply Chain - Late Delivery Risk Dashboard")
+st.title("Supply Chain - Late Delivery Risk Dashboard")
 
 @st.cache_data
 def load_data():
