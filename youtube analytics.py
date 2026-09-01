@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(page_title="YouTube Analytics", layout="wide")
-st.title("📺 YouTube Channel Analytics Dashboard")
+st.title("YouTube Channel Analytics Dashboard")
 
 @st.cache_data
 def load_data():
@@ -41,43 +41,43 @@ k5.metric("Total Videos", f"{df.shape[0]}")
 # --- CHARTS ---
 c1,c2 = st.columns(2)
 with c1:
-    st.subheader("📈 Views Trend Over Time")
+    st.subheader(" Views Trend Over Time")
     fig = px.line(df, x='Publish Date', y='Views', markers=True, text='Video Title')
     fig.update_traces(textposition="top center")
     st.plotly_chart(fig, use_container_width=True)
 
 with c2:
-    st.subheader("💰 What Content Works? - Views by Category")
+    st.subheader(" What Content Works? - Views by Category")
     cat = df.groupby('Category')['Views'].sum().reset_index()
     fig = px.pie(cat, values='Views', names='Category', hole=0.4)
     st.plotly_chart(fig, use_container_width=True)
 
 c3,c4 = st.columns(2)
 with c3:
-    st.subheader("🎯 CTR vs Views (Thumbnail Performance)")
+    st.subheader(" CTR vs Views (Thumbnail Performance)")
     fig = px.scatter(df, x='CTR (%)', y='Views', size='Impressions', color='Category', hover_name='Video Title')
     st.plotly_chart(fig, use_container_width=True)
     st.caption("Insight: CTR > 9% = Viral Video")
 
 with c4:
-    st.subheader("🏆 Top 10 Performing Videos")
+    st.subheader(" Top 10 Performing Videos")
     top = df.sort_values('Views', ascending=False).head(10)
     fig = px.bar(top, x='Views', y='Video Title', orientation='h', color='Views')
     st.plotly_chart(fig, use_container_width=True)
 
 c5,c6 = st.columns(2)
 with c5:
-    st.subheader("🔄 Views to Subscriber Conversion")
+    st.subheader(" Views to Subscriber Conversion")
     fig = px.bar(df, x='Video Title', y='Subscribers Gained', color='Views')
     st.plotly_chart(fig, use_container_width=True)
 
 with c6:
-    st.subheader("⏰ Best Time to Publish? (Demo)")
+    st.subheader(" Best Time to Publish? (Demo)")
     df['Hour'] = df['Publish Date'].dt.hour
     # Just for demo logic
     st.dataframe(df[['Video Title','Views','CTR (%)']].sort_values('Views', ascending=False).head(10), use_container_width=True)
 
-with st.expander("📌 Resume Point"):
+with st.expander(" Resume Point"):
     st.code("""
 - Built YouTube Channel Analytics Dashboard using YouTube Studio export + Streamlit + Plotly
 - Analyzed 20+ videos, 1M+ total views, tracked KPIs: Views, CTR, Watch Time, Retention
@@ -85,4 +85,4 @@ with st.expander("📌 Resume Point"):
 - Automated insights on best performing content and subscriber conversion rate
     """)
 
-st.success("✅ Project 23 Done - You can now show YOUR OWN YouTube data in interview")
+st.success(" Project Done - You can now show YOUR OWN YouTube data in interview")
