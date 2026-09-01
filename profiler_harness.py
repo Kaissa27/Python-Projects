@@ -61,7 +61,7 @@ def execute_profile_analysis():
     print("\n🏁 Simulation ended. Analyzing performance statistics ledger...\n")
     
     # 3. PARSE AND FORMAT METRIC LOGS
-    stats = pstats.Stats(profiler)
+    stats = pstats.Stats(profiler) 
     
     # Sort data entries by 'cumulative' time spent inside the function
     # and print out the top 10 most expensive function calls
