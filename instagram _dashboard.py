@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(page_title="Instagram Analytics", layout="wide")
-st.title("📸 Instagram - Influencer Analytics Dashboard")
+st.title("Instagram - Influencer Analytics Dashboard")
 
 @st.cache_data
 def load():
@@ -50,37 +50,37 @@ df_f = df[df['Post Type'].isin(ptype)]
 # --- CHARTS ---
 c1,c2 = st.columns(2)
 with c1:
-    st.subheader("📈 Reach Over Time")
+    st.subheader("Reach Over Time")
     fig = px.line(df_f, x='Date', y='Reach', color='Post Type', markers=True)
     st.plotly_chart(fig, use_container_width=True)
 
 with c2:
-    st.subheader("🔥 What Works Best? Avg Engagement by Type")
+    st.subheader("What Works Best? Avg Engagement by Type")
     avg_eng = df_f.groupby('Post Type')['Engagement Rate'].mean().reset_index()
     fig = px.bar(avg_eng, x='Post Type', y='Engagement Rate', color='Post Type', text_auto='.2f')
     st.plotly_chart(fig, use_container_width=True)
 
 c3,c4 = st.columns(2)
 with c3:
-    st.subheader("🎯 Likes vs Reach (Viral Check)")
+    st.subheader("Likes vs Reach (Viral Check)")
     fig = px.scatter(df_f, x='Reach', y='Likes', size='Comments', color='Post Type', hover_data=['Engagement Rate'])
     st.plotly_chart(fig, use_container_width=True)
     st.caption("Insight: Reels get 3x more Reach than Images")
 
 with c4:
-    st.subheader("💾 Saves vs Shares - Content Value")
+    st.subheader(" Saves vs Shares - Content Value")
     fig = px.scatter(df_f, x='Saves', y='Shares', color='Post Type', size='Likes')
     st.plotly_chart(fig, use_container_width=True)
 
 c5,c6 = st.columns(2)
 with c5:
-    st.subheader("🏆 Top 5 Viral Posts")
+    st.subheader("Top 5 Viral Posts")
     top = df_f.sort_values('Reach', ascending=False).head(5)
     fig = px.bar(top, x='Reach', y='Post ID', orientation='h', color='Engagement Rate', text='Post Type')
     st.plotly_chart(fig, use_container_width=True)
 
 with c6:
-    st.subheader("📊 Funnel: Reach -> Profile Visit -> Follow")
+    st.subheader(" Funnel: Reach -> Profile Visit -> Follow")
     funnel = pd.DataFrame({
         'Stage': ['Reach','Profile Visits','Follows'],
         'Count': [df_f['Reach'].sum(), df_f['Profile Visits'].sum(), df_f['Follows'].sum()]
@@ -89,7 +89,7 @@ with c6:
     st.plotly_chart(fig, use_container_width=True)
 
 # --- HASHTAG ANALYSIS (FAKE BUT IMPRESSIVE) ---
-st.subheader("🔍 Hashtag Performance")
+st.subheader("Hashtag Performance")
 hashtag_data = pd.DataFrame({
     'Hashtag': ['#tech','#finance','#motivation','#reels','#viral','#dataanalytics'],
     'Avg Reach': [45000, 52000, 31000, 60000, 58000, 48000]
@@ -99,7 +99,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.dataframe(df_f.sort_values('Engagement Rate', ascending=False), use_container_width=True)
 
-with st.expander("📌 Resume Points"):
+with st.expander(" Resume Points"):
     st.code("""
 - Built Instagram Influencer Analytics Dashboard tracking 30 posts, 1.2M+ Reach
 - Analyzed KPIs: Reach, Engagement Rate, Saves, CTR, Follower Conversion
@@ -108,4 +108,4 @@ with st.expander("📌 Resume Points"):
 - Recommendations for best time to post & hashtag strategy to grow by 40%
     """)
 
-st.success("✅ Project 24 Done - This gets you Digital Marketing Analyst jobs")
+st.success("  This gets you Digital Marketing Analyst jobs")
