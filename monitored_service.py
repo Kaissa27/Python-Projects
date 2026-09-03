@@ -42,7 +42,7 @@ class SystemTelemetryEngine:
 
 # Simulating an operational loop within an enterprise service node
 def run_monitored_node():
-    print("🛰️ Activating Telemetry Engine Core...")
+    print(" Activating Telemetry Engine Core...")
     telemetry = SystemTelemetryEngine(service_name="Ingestion_Gateway_Node_1")
     
     # Simulating standard production runtime monitoring checks
@@ -59,12 +59,12 @@ def run_monitored_node():
             db_status=mock_database_health
         )
         
-        print(f"\n📡 [Cycle {cycle}] Streaming Telemetry Frame to stdout:")
+        print(f"\n [Cycle {cycle}] Streaming Telemetry Frame to stdout:")
         print(json.dumps(live_diagnostics, indent=2))
         
         # Simulate a sudden downstream infrastructure event on cycle 2
         if cycle == 1:
-            print("\n⚡ [ALERT] Simulating Redis memory exhaustion event...")
+            print("\n [ALERT] Simulating Redis memory exhaustion event...")
             mock_redis_health = "TIMEOUT_EXPIRED"
 
 if __name__ == "__main__":
