@@ -63,7 +63,7 @@ def run_kerberoast_audit():
     print("[*] Enumerating Domain Service Principal Names (SPNs)...")
     print(f"[*] Found {len(MOCK_SPN_DIRECTORY)} total SPN record(s) registered in directory.\n")
 
-    kerberoastable_targets = []
+    kerberoastable_targets = [] 
 
     # 1. SPN Discovery & Targeting
     for entry in MOCK_SPN_DIRECTORY:
