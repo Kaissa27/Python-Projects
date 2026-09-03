@@ -30,7 +30,7 @@ def load_data():
     return df
 
 init_db()
-st.title("💼 Job Application Tracker")
+st.title("Job Application Tracker")
 
 # Sidebar form
 with st.sidebar:
@@ -64,7 +64,7 @@ if not df.empty:
     today = datetime.now().date()
     due = df[pd.to_datetime(df.follow_up_date).dt.date <= today + timedelta(days=3)]
     if not due.empty:
-        st.warning("⚠️ Follow ups due soon")
+        st.warning(" Follow ups due soon")
         st.dataframe(due[['company','role','follow_up_date']])
     
     st.dataframe(df)
