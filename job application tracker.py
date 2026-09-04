@@ -67,6 +67,6 @@ if not df.empty:
         st.warning(" Follow ups due soon")
         st.dataframe(due[['company','role','follow_up_date']])
     
-    st.dataframe(df)
+    st.dataframe(df) 
 else:
     st.info("Add your first job application")
