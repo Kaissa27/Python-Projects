@@ -4,7 +4,7 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
-st.title("🌸 Project 1: Iris Flower Classifier - Your First ML Model")
+st.title(" Project 1: Iris Flower Classifier - Your First ML Model")
 
 # Load data
 iris = load_iris()
@@ -26,7 +26,7 @@ acc = model.score(X_test, y_test)
 st.metric("Model Accuracy", f"{acc*100:.2f}%")
 
 # Prediction UI
-st.subheader("🔮 Try Prediction")
+st.subheader("Try Prediction")
 sl = st.slider("Sepal Length", 4.0, 8.0, 5.1)
 sw = st.slider("Sepal Width", 2.0, 4.5, 3.5)
 pl = st.slider("Petal Length", 1.0, 7.0, 1.4)
@@ -38,5 +38,5 @@ if st.button("Predict"):
     st.success(f"Predicted Flower: **{name}**")
     st.balloons()
 
-with st.expander("📌 Resume Point"):
+with st.expander(" Resume Point"):
     st.code("Built first ML classification model using RandomForest on Iris dataset (150 samples), achieved 100% accuracy, deployed with Streamlit")
