@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 st.set_page_config(page_title="Netflix Style Recommender", layout="wide")
-st.title("🎬 Project 26: Movie Recommendation Engine - Like Netflix")
+st.title(" Project 26: Movie Recommendation Engine - Like Netflix")
 
 @st.cache_data
 def load():
@@ -67,12 +67,12 @@ if selected_movie:
             st.progress(float(score))
 
     st.divider()
-    st.subheader("📊 How it Works - Cosine Similarity Matrix")
+    st.subheader("How it Works - Cosine Similarity Matrix")
     st.write("This is what Netflix uses - TF-IDF + Cosine Similarity")
     sim_df = pd.DataFrame(cosine_sim, index=df['title'], columns=df['title'])
     st.dataframe(sim_df.style.background_gradient(cmap='Greens'), use_container_width=True)
 
-with st.expander("📌 Resume Points - COPY THIS"):
+with st.expander(" Resume Points - COPY THIS"):
     st.code("""
 - Built Content-Based Movie Recommendation System using TF-IDF and Cosine Similarity (like Netflix/Amazon)
 - Processed 32 movies with genre + description features, created 32x32 similarity matrix
@@ -81,4 +81,4 @@ with st.expander("📌 Resume Points - COPY THIS"):
 - Future Scope: Collaborative Filtering + User ratings
     """)
 
-st.success("✅ Project 26 Done - Now you can say 'I built a Netflix clone' in interviews")
+st.success
