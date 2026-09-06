@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 import re
 
 st.set_page_config(page_title="Amazon Sentiment Analysis", layout="wide")
-st.title("🛒 Project 27: Amazon Reviews Sentiment Analysis - NLP")
+st.title(" Project: Amazon Reviews Sentiment Analysis - NLP")
 
 @st.cache_data
 def load_data():
@@ -56,7 +56,7 @@ k2.metric("Positive", len(df[df['sentiment']==1]))
 k3.metric("Negative", len(df[df['sentiment']==0]))
 
 # --- TRAIN MODEL ---
-st.subheader("🧠 Training NLP Model - TF-IDF + Logistic Regression")
+st.subheader("Training NLP Model - TF-IDF + Logistic Regression")
 
 X = df['clean_review']
 y = df['sentiment']
@@ -76,8 +76,8 @@ st.metric("Model Accuracy", f"{acc*100:.2f}%")
 
 c1,c2 = st.columns(2)
 with c1:
-    st.subheader("📊 Sentiment Distribution")
-    fig = px.pie(df, names='sentiment', title='Positive vs Negative',
+    st.subheader("Sentiment Distribution")
+    fig = px.pie(df. names='sentiment', title='Positive vs Negative',
                  color_discrete_map={0:'red',1:'green'},
                  labels={0:'Negative',1:'Positive'})
     fig.update_traces(labels=['Negative','Positive'])
@@ -93,7 +93,7 @@ with c2:
 
 # --- LIVE PREDICTION ---
 st.divider()
-st.subheader("🔮 Try Live - Paste Any Amazon Review")
+st.subheader("Try Live - Paste Any Amazon Review")
 
 user_review = st.text_area("Enter review text:", "This product is amazing, I love it!")
 
@@ -104,10 +104,10 @@ if st.button("Analyze Sentiment"):
     prob = model.predict_proba(vec)[0].max()
 
     if pred == 1:
-        st.success(f"😊 POSITIVE - {prob*100:.1f}% confident")
+        st.success(f" POSITIVE - {prob*100:.1f}% confident")
         st.balloons()
     else:
-        st.error(f"😡 NEGATIVE - {prob*100:.1f}% confident")
+        st.error(f"NEGATIVE - {prob*100:.1f}% confident")
 
     # Word importance
     st.subheader("Why this prediction? - Top Words")
@@ -124,7 +124,7 @@ if st.button("Analyze Sentiment"):
         st.write("**Negative Words**")
         st.dataframe(pd.DataFrame(top_negative, columns=['Weight','Word']))
 
-with st.expander("📌 Resume Points - COPY THIS"):
+with st.expander(" Resume Points - COPY THIS"):
     st.code("""
 - Built NLP Sentiment Analysis model on 500 Amazon reviews using TF-IDF + Logistic Regression
 - Achieved 92% accuracy in classifying Positive vs Negative reviews
@@ -134,4 +134,4 @@ with st.expander("📌 Resume Points - COPY THIS"):
 - Tech: Python, NLTK, Scikit-learn, TF-IDF, NLP, Streamlit
     """)
 
-st.success("✅ Project 27 Done - You now know NLP")
+st.success(" Project Done - You now know NLP")
