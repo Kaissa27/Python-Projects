@@ -35,13 +35,13 @@ def process_single_term(term, index):
 def dispatch_webhook_report(total_items, success_count, fail_count, elapsed_time):
     """Assembles a structured JSON payload and ships it over the web network."""
     if DISCORD_WEBHOOK_URL == "YOUR_DISCORD_WEBHOOK_URL_HERE":
-        print("\n⚠️ Webhook dispatch skipped: Please provide a valid URL to transmit reports.")
+        print("\n Webhook dispatch skipped: Please provide a valid URL to transmit reports.")
         return
 
     # Constructing a rich message using Discord's markdown format
     payload = {
         "content": (
-            f"📊 **AUTOMATION PIPELINE REPORT**\n"
+            f" **AUTOMATION PIPELINE REPORT**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🏁 **Status:** Complete\n"
             f"⏱️ **Execution Time:** {elapsed_time:.2f} seconds\n"
@@ -49,18 +49,18 @@ def dispatch_webhook_report(total_items, success_count, fail_count, elapsed_time
             f"✅ **Successful Extractions:** {success_count}\n"
             f"❌ **Failed Extractions:** {fail_count}\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🔔 *This is an automated server message. No response required.*"
+            f" *This is an automated server message. No response required.*"
         )
     }
 
     try:
         response = requests.post(DISCORD_WEBHOOK_URL, json=payload)
         if response.status_code == 204:
-            print("🚀 Report successfully dispatched and displayed in the remote chat workspace!")
+            print(" Report successfully dispatched and displayed in the remote chat workspace!")
         else:
-            print(f"❌ Webhook returned network error code: {response.status_code}")
+            print(f" Webhook returned network error code: {response.status_code}")
     except Exception as e:
-        print(f"⚠️ Network transmission failure: {e}")
+        print(f" Network transmission failure: {e}")
 
 def run_pipeline():
     start_time = time.time()
@@ -70,7 +70,7 @@ def run_pipeline():
     search_tasks = list(df["SearchTerm"])
     results = []
     
-    print("📦 Booting parallel worker channels...")
+    print(" Booting parallel worker channels...")
     # 2. Run workers concurrently
     with ThreadPoolExecutor(max_workers=3) as executor:
         futures = {executor.submit(process_single_term, term, i): term for i, term in enumerate(search_tasks)}
