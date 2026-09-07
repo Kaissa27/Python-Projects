@@ -2,10 +2,10 @@ import streamlit as st
 from openai import OpenAI
 
 st.set_page_config(page_title="My ChatGPT Clone", page_icon="🤖", layout="wide")
-st.title("🤖 Project 28: Build ChatGPT Clone - AI Chatbot")
+st.title("Project 28: Build ChatGPT Clone - AI Chatbot")
 
 # --- SETUP ---
-st.sidebar.title("⚙️ Settings")
+st.sidebar.title(" Settings")
 st.sidebar.write("Get FREE API Key from: platform.openai.com")
 
 api_key = st.sidebar.text_input("Enter OpenAI API Key", type="password", help="sk-....")
@@ -27,7 +27,7 @@ else:
     custom_prompt = prompts[role]
 
 st.sidebar.divider()
-st.sidebar.info("💰 Cost: gpt-4o-mini = FREE-ish ( $0.15 per 1M tokens). 1 conversation = < 1 paisa")
+st.sidebar.info(" Cost: gpt-4o-mini = FREE-ish ( $0.15 per 1M tokens). 1 conversation = < 1 paisa")
 
 # --- CHAT UI ---
 if "messages" not in st.session_state:
@@ -42,7 +42,7 @@ for msg in st.session_state.messages:
 # Input
 if prompt := st.chat_input(f"Ask {role}..."):
     if not api_key:
-        st.warning("⚠️ Please enter OpenAI API Key in sidebar to make it work. It's free!")
+        st.warning("Please enter OpenAI API Key in sidebar to make it work. It's free!")
         st.info("For demo without API, here is how it would work:")
         st.code(f"""
 User: {prompt}
@@ -72,7 +72,7 @@ st.divider()
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.subheader("💼 How to Make Money")
+    st.subheader("How to Make Money")
     st.write("""
     1. **Resume Reviewer Bot** - Sell to students for Rs 299
     2. **SQL Practice Bot** - For data analyst aspirants
@@ -80,7 +80,7 @@ with col1:
     """)
 
 with col2:
-    st.subheader("🚀 Deploy & Sell")
+    st.subheader("Deploy & Sell")
     st.code("""
     1. Deploy on Streamlit Cloud - FREE
     2. Add Razorpay payment link
@@ -89,7 +89,7 @@ with col2:
     """)
 
 with col3:
-    st.subheader("📌 Resume Point - MOST POWERFUL")
+    st.subheader(" Resume Point - MOST POWERFUL")
     st.code("""
 Built ChatGPT Clone using OpenAI API (GPT-4o-mini)
 with 5 custom roles: Mentor, Resume Reviewer,
@@ -102,7 +102,7 @@ Tech: Python, OpenAI API, Streamlit, Prompt Engineering
     """, language="text")
 
 # --- NO API KEY VERSION (FREE) ---
-with st.expander("🆓 Don't have API Key? Use FREE version with Groq/Hugging Face"):
+with st.expander("Don't have API Key? Use FREE version with Groq/Hugging Face"):
     st.code("""
 # FREE ALTERNATIVE - No OpenAI needed, use Groq (free)
 
@@ -122,5 +122,5 @@ print(completion.choices[0].message.content)
     """, language="python")
     st.link_button("Get FREE Groq API Key", "https://console.groq.com/keys")
 
-st.success("✅ Project 28 DONE - YOU CAN NOW BUILD & SELL AI CHATBOTS")
+st.success(" Project DONE - YOU CAN NOW BUILD & SELL AI CHATBOTS")
 st.balloons()
