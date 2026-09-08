@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(page_title="Spotify Analytics", layout="wide")
-st.title("🎧 Spotify Music Analytics Dashboard")
+st.title(" Spotify Music Analytics Dashboard")
 
 @st.cache_data
 def load_data():
