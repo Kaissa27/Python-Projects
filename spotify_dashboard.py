@@ -44,7 +44,7 @@ c3, c4 = st.columns(2)
 with c3:
     st.subheader("Danceability vs Energy (What makes a hit?)")
     fig3 = px.scatter(filtered_df.sample(5000), x='danceability', y='energy', color='popularity', size='loudness', hover_name='track_name')
-    st.plotly_chart(fig3, use_container_width=True)
+    st.plotly_chart(fig3, use_container_width=True) 
 
 with c4:
     st.subheader("Audio Features Radar")
