@@ -70,7 +70,7 @@ async def ingest_pipeline_metric(payload: MetricIngestionPayload):
 async def simulate_concurrent_load(total_requests=500):
     """Simulates hundreds of scraping nodes hitting the API server simultaneously."""
     async with AsyncSessionLocal() as session:
-        print(f"⚡ Booting Event Loop. Coordinating {total_requests} async db operations simultaneously...")
+        print(f"Booting Event Loop. Coordinating {total_requests} async db operations simultaneously...")
         start_time = time.time()
         
         # Build an array of concurrent asynchronous coroutine tasks
