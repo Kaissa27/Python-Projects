@@ -72,7 +72,7 @@ if uploaded_files and jd_text:
     k3.metric("Top Match", f"{results.iloc[0]['Candidate']} - {results.iloc[0]['Match Score %']}%")
 
     # Table
-    st.subheader("📊 AI Ranking")
+    st.subheader("AI Ranking")
     st.dataframe(results.style.background_gradient(subset=["Match Score %"], cmap="Greens"), use_container_width=True)
 
     # Chart
@@ -81,7 +81,7 @@ if uploaded_files and jd_text:
     st.plotly_chart(fig, use_container_width=True)
 
     # Skill Gap
-    st.subheader("🔍 Why Top Candidate is Best? - Skill Match")
+    st.subheader(" Why Top Candidate is Best? - Skill Match")
     st.write("Top keywords from Job Description:")
     feature_names = vectorizer.get_feature_names_out()
     jd_vector = tfidf_matrix[0].toarray()[0]
@@ -97,13 +97,13 @@ if uploaded_files and jd_text:
         st.text_area(f"Resume: {selected}", resumes[idx][:2000], height=200)
 
 else:
-    st.info("👈 Paste JD and upload resumes from sidebar to start AI screening")
+    st.info(" Paste JD and upload resumes from sidebar to start AI screening")
 
     # Demo without upload
     st.subheader("How it works - Demo")
     st.image("https://i.imgur.com/8Km9tLL.png", caption="TF-IDF + Cosine Similarity - Same as ATS systems")
 
-with st.expander("📌 Resume Points - COPY THIS - THIS IS YOUR STAR PROJECT"):
+with st.expander(" Resume Points - COPY THIS - THIS IS YOUR STAR PROJECT"):
     st.code("""
 - Built AI-Powered Resume Screening System used by recruiters to rank candidates
 - Extracted text from PDF resumes using PyMuPDF, cleaned and preprocessed 100+ resumes
@@ -122,4 +122,4 @@ into TF-IDF vectors, then calculate cosine similarity. Higher similarity means b
 Recruiters use same logic to filter 1000 resumes in 5 seconds."
     """)
 
-st.success("✅ Project 29 DONE - This one project = Job Offer")
+st.success(" Project DONE - This one project = Job Offer")
