@@ -65,7 +65,7 @@ def run_enumeration():
     print("=" * 60)
 
     # Use a ThreadPoolExecutor to run connection checks concurrently
-    with ThreadPoolExecutor(max_workers=THREADS) as executor:
+    with ThreadPoolExecutor(max_workers=THREADS) as executor: 
         executor.map(check_subdomain, MOCK_WORDLIST)
 
     print("\n" + "=" * 60)
