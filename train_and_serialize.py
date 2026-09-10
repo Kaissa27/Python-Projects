@@ -34,11 +34,11 @@ def export_trained_model():
     # 3. Train Model Weights
     model = LinearRegression()
     model.fit(X, y)
-    print(f"✅ Model trained successfully. R² Score: {model.score(X, y):.2f}")
+    print(f" Model trained successfully. R² Score: {model.score(X, y):.2f}")
 
     # 4. SERIALIZATION: Freeze and save the model file to disk
     joblib.dump(model, MODEL_FILE)
-    print(f"💾 Model mathematical weights saved permanently to: {MODEL_FILE}")
+    print(f"Model mathematical weights saved permanently to: {MODEL_FILE}")
 
 if __name__ == "__main__":
     export_trained_model()
