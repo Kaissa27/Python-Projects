@@ -7,7 +7,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import plotly.express as px
 
 st.set_page_config(page_title="AI Resume Screener", layout="wide")
-st.title("🤖 Project 29: AI Resume Screener - Used by Google Recruiters")
+st.title(" Project : AI Resume Screener - Used by Google Recruiters")
 st.write("Upload 10 resumes + 1 Job Description. AI will rank who is best.")
 
 # --- FUNCTIONS ---
