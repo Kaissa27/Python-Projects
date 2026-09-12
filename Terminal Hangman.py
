@@ -41,7 +41,7 @@ def play_hangman():
 
     # 3. End Game Results
     if "_" not in display_word:
-        print(f"\n🎉 Congratulations! You guessed the word: {secret_word}")
+        print(f"\n Congratulations! You guessed the word: {secret_word}")
     else:
         print(f"\n💀 Game Over! The word was: {secret_word}")
 
