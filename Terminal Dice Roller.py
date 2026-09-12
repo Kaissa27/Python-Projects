@@ -9,7 +9,7 @@ def dice_roller():
         die1 = random.randint(1, 6)
         die2 = random.randint(1, 6)
         
-        print(f"🎲 You rolled a {die1} and a {die2}!")
+        print(f" You rolled a {die1} and a {die2}!")
         print(f"Total: {die1 + die2}")
         
         if die1 == die2:
