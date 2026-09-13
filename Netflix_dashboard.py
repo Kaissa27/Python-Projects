@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 st.set_page_config(page_title="Netflix Analyzer", layout="wide")
-st.title("🎬 Netflix Movies & TV Shows Analytics")
+st.title(" Netflix Movies & TV Shows Analytics")
 
 @st.cache_data
 def load_data():
@@ -39,7 +39,7 @@ with col2:
     st.plotly_chart(fig2)
 
 # Genre Analysis
-st.subheader("🔥 Top 15 Genres on Netflix")
+st.subheader(" Top 15 Genres on Netflix")
 genres = df['listed_in'].str.split(', ').explode().value_counts().head(15).reset_index()
 genres.columns = ['genre', 'count']
 fig3 = px.bar(genres, x='count', y='genre', orientation='h')
@@ -62,7 +62,7 @@ with col2:
     st.plotly_chart(fig5)
 
 # ===== RECOMMENDATION ENGINE =====
-st.subheader("🤖 Netflix Recommendation Engine")
+st.subheader(" Netflix Recommendation Engine")
 
 # Simple content-based recommender
 @st.cache_data
@@ -98,10 +98,10 @@ if movie_input:
         st.write("No recommendations found. Try another title.")
 
 # Insights
-st.subheader("🔍 Key Insights")
+st.subheader(" Key Insights")
 st.write("1. **Most Content**: TV-MA and TV-14 are dominant ratings")
 st.write("2. **Peak Year**: Netflix added most titles in 2019-2020")
 st.write("3. **Top Genres**: International Movies, Dramas, Comedies rule")
 st.write("4. **Recommendation**: Add more Korean Dramas + True Crime - fastest growing")
 
-st.download_button("📥 Download Data", df.to_csv(index=False).encode(), "netflix_analysis.csv")
+st.download_button(" Download Data", df.to_csv(index=False).encode(), "netflix_analysis.csv")
