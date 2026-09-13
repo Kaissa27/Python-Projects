@@ -27,7 +27,7 @@ def add_transaction():
               (t_type, category, amount, date, note))
     conn.commit()
     conn.close()
-    print("✅ Transaction added!")
+    print(" Transaction added!")
 
 def view_summary():
     conn = sqlite3.connect(DB_NAME)
