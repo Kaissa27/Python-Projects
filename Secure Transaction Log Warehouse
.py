@@ -39,6 +39,6 @@ if __name__ == "__main__":
     db.log_asset("CASH_USD", 5000.00)
     db.log_asset("EQUITY_AAPL", 300.12)
     
-    print("\n--- 📊 DATA WAREHOUSE AGGREGATE REPORT ---")
+    print("\n--- DATA WAREHOUSE AGGREGATE REPORT ---")
     for asset, total, count in db.generate_aggregate_report():
-        print(f"🔹 Asset: {asset:<15} Total Value: ${total:>10,.2f} [Entries: {count}]") 
+        print(f" Asset: {asset:<15} Total Value: ${total:>10,.2f} [Entries: {count}]") 
