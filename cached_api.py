@@ -32,7 +32,7 @@ def get_regional_revenue_report():
     try:
         cached_data = redis_client.get(CACHE_KEY_ANALYTICS)
     except redis.RedisError as e:
-        print(f"⚠️ Redis connection offline: {e}")
+        print(f" Redis connection offline: {e}")
         cached_data = None
 
     # STEP B: CACHE HIT - Data found in RAM! Return it instantly.
@@ -47,7 +47,7 @@ def get_regional_revenue_report():
         }
 
     # STEP C: CACHE MISS - Data not found. Hit the heavy core database.
-    print("🔍 Cache Miss! Pulling record matrices from physical database layers...")
+    print(" Cache Miss! Pulling record matrices from physical database layers...")
     
     # Simulating a heavy SQL query execution delay (e.g., millions of rows calculated)
     time.sleep(1.2) 
@@ -59,7 +59,7 @@ def get_regional_revenue_report():
         # ex=CACHE_TTL_SECONDS sets the time-to-live. It vanishes automatically in 60s.
         redis_client.set(CACHE_KEY_ANALYTICS, report_json_string, ex=CACHE_TTL_SECONDS)
     except redis.RedisError as e:
-        print(f"⚠️ Failed to write to Redis memory ledger: {e}")
+        print(f" Failed to write to Redis memory ledger: {e}")
 
     elapsed = (time.time() - start_time) * 1000
     return {
