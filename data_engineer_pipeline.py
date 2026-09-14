@@ -75,7 +75,7 @@ def generate_visual_dashboard():
     # Save the chart to disk as an image asset
     plt.savefig(CHART_FILE)
     plt.close()
-    print(f"📊 Live telemetry chart updated and exported to: {CHART_FILE}")
+    print(f" Live telemetry chart updated and exported to: {CHART_FILE}")
 
 # =====================================================================
 # 4. ORCHESTRATION PIPELINE (The Transform & Coordinate Layer)
@@ -87,7 +87,7 @@ def run_pipeline():
     targets = ["Python (programming language)", "Data engineering", "Automation", "InvalidPageXYZ999"]
     raw_extracted_batches = []
     
-    print("🚀 Commencing concurrent ETL pipeline matrix...")
+    print(" Commencing concurrent ETL pipeline matrix...")
     with ThreadPoolExecutor(max_workers=3) as executor:
         futures = [executor.submit(extract_web_data, term) for term in targets]
         for future in as_completed(futures):
@@ -100,7 +100,7 @@ def run_pipeline():
     # Load: Bulk insert the cleaned pandas frame right into the SQLite database table
     with sqlite3.connect(DB_FILE) as conn:
         df_transformed.to_sql("web_audit_logs", conn, if_exists="append", index=False)
-    print("💾 Data transaction batches finalized and written permanently to SQL database.")
+    print(" Data transaction batches finalized and written permanently to SQL database.")
     
     # Analyze: Trigger dashboard generation
     generate_visual_dashboard()
