@@ -17,7 +17,7 @@ def compute_business_intelligence():
         Transaction_Volume=("SaleAmount", "count")
     ).reset_index()
 
-    print("📊 MULTI-DIMENSIONAL BUSINESS INTELLIGENCE MATRIX:")
+    print(" MULTI-DIMENSIONAL BUSINESS INTELLIGENCE MATRIX:")
     print(grouped_report.to_string(index=False))
 
 if __name__ == "__main__":
