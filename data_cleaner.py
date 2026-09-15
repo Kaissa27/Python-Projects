@@ -12,7 +12,7 @@ def run_data_normalization():
 
     # 1. Instantiate the structured Vectorized Matrix (DataFrame)
     df = pd.DataFrame(raw_telemetry_logs)
-    print("📋 RAW UNSTRUCTURED MATRIX:")
+    print("RAW UNSTRUCTURED MATRIX:")
     print(df, "\n")
 
     # 2. Drop absolute identical data blocks (Deduplication)
@@ -29,7 +29,7 @@ def run_data_normalization():
     # Exclude system readings that exceed unrealistic operational bounds
     df = df[df["Temperature"] < 90.0]
 
-    print("✅ NORMALIZED CLEAN DATA FRAME:")
+    print(" NORMALIZED CLEAN DATA FRAME:")
     print(df)
     
     # Export clean data warehouse matrix
