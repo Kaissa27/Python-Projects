@@ -4,7 +4,7 @@ import pandas as pd
 import qrcode
 from io import BytesIO
 
-st.title("💸 Group Expense Splitter")
+st.title("Group Expense Splitter")
 
 DB = "expenses.db"
 conn = sqlite3.connect(DB)
