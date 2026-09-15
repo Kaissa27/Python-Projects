@@ -12,11 +12,11 @@ DB_FILE = BASE_DIR / "enterprise_warehouse.db"
 # 1. WEB UI SETUP & SECURITY CHECK
 # =====================================================================
 st.set_page_config(page_title="Executive Revenue Dashboard", layout="wide")
-st.title("📊 Executive Revenue Dashboard")
+st.title("Executive Revenue Dashboard")
 st.markdown("Interactive Business Intelligence Portal reading directly from our production database layer.")
 
 if not DB_FILE.exists():
-    st.error(f"❌ Database not found at `{DB_FILE}`. Please run the previous SQL script first to seed the data warehouse!")
+    st.error(f" Database not found at `{DB_FILE}`. Please run the previous SQL script first to seed the data warehouse!")
 else:
     # =====================================================================
     # 2. DATA EXTRACTION LAYER
@@ -58,7 +58,7 @@ else:
     chart_column, table_column = st.columns([4, 3])
 
     with chart_column:
-        st.subheader("📈 Revenue Capture by User Tier")
+        st.subheader(" Revenue Capture by User Tier")
         if total_transactions > 0:
             # Aggregate metrics on the fly based on the user's active filter states
             tier_summary = filtered_df.groupby("user_tier")["revenue"].sum()
@@ -77,7 +77,7 @@ else:
             st.warning("No data rows comply with your current sidebar filter constraints.")
 
     with table_column:
-        st.subheader("📋 Filtered Audit Ledger")
+        st.subheader("Filtered Audit Ledger")
         # Display the data frame as an interactive spreadsheet component
         st.dataframe(
             filtered_df,
