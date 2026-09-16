@@ -2,7 +2,7 @@ import streamlit as st
 import pdfplumber
 import google.generativeai as genai
 
-st.title("🎯 AI Resume Tailor")
+st.title(" AI Resume Tailor")
 
 resume_file = st.file_uploader("Upload Master Resume PDF", type="pdf")
 jd_text = st.text_area("Paste Job Description")
