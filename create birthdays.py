@@ -28,8 +28,8 @@ def check_birthdays():
             name = row["Name"]
             relation = row["Relation"]
             gifts = get_gift_ideas(relation)
-            
-            print("\n🎉 BIRTHDAY REMINDER 🎉")
+           
+            print("\n BIRTHDAY REMINDER ")
             print(f"{name} ({relation}) has birthday tomorrow - {tomorrow.strftime('%d %B')}")
             print(f"Gift Ideas: {', '.join(gifts)}")
             print(f"WhatsApp them: https://wa.me/91{row['Phone']}")
