@@ -11,7 +11,7 @@ from PIL import Image
 import pytesseract
 
 st.set_page_config(page_title="Smart Expense Splitter", layout="centered")
-st.title("💸 Smart Expense Splitter + Receipt Scanner")
+st.title(" Smart Expense Splitter + Receipt Scanner")
 st.write("Upload bill → Auto read amount → Split with friends")
 
 # DB Setup
