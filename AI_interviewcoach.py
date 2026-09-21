@@ -8,7 +8,7 @@ from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 import speech_recognition as sr
 
-st.title("🎤 AI Interview Coach")
+st.title("AI Interview Coach")
 st.write("Upload Resume + JD. Get mock interviews with instant feedback")
 
 # Sidebar inputs
