@@ -5,7 +5,7 @@ import google.generativeai as genai
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-st.title("📱 AI WhatsApp Analyzer")
+st.title("AI WhatsApp Analyzer")
 
 chat_file = st.file_uploader("Upload WhatsApp.txt export", type="txt")
 
