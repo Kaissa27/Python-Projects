@@ -1,7 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
 
-st.title("🎤 AI Mock Interviewer")
+st.title(" AI Mock Interviewer")
 
 role = st.selectbox("Select Role", ["Python Developer", "Data Analyst", "SDE"])
 
