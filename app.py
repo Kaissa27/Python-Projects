@@ -5,7 +5,7 @@ import plotly.express as px
 st.set_page_config(page_title="Your Name - Data Analyst Portfolio", layout="wide", page_icon="🚀")
 
 # --- HEADER ---
-st.title("🚀 Hi, I'm [Your Name] - Data Analyst")
+st.title(" Hi, I'm [Your Name] - Data Analyst")
 st.subheader("Python | SQL | Power BI | Streamlit | 24+ Projects")
 
 c1,c2,c3,c4 = st.columns(4)
@@ -17,7 +17,7 @@ c4.link_button("Download Resume", "https://your-resume-link.com")
 st.divider()
 
 # --- TABS FOR ALL PROJECTS ---
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["📊 Sales & Finance", "👥 Marketing & Customer", "🚚 Operations", "📱 Social Media", "🤖 AI Chatbot"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs([" Sales & Finance", " Marketing & Customer", "Operations", " Social Media", " AI Chatbot"])
 
 with tab1:
     st.subheader("Sales Dashboard - Superstore")
@@ -50,7 +50,7 @@ with tab4:
         st.image("https://via.placeholder.com/400x300?text=Instagram+Analytics")
 
 with tab5:
-    st.subheader("🤖 Ask AI About My Resume")
+    st.subheader(" Ask AI About My Resume")
     st.write("Recruiter can ask: What are your skills? Show your best project?")
     
     # Simple Chatbot without API key - using rule based
@@ -82,10 +82,10 @@ with tab5:
         st.chat_message("assistant").write(answer)
 
 st.divider()
-st.subheader("📬 Contact Me")
+st.subheader(" Contact Me")
 st.write("Email: yourname@gmail.com | LinkedIn: linkedin.com/in/yourname | GitHub: github.com/yourname")
 
-with st.expander("📌 How to deploy this for FREE"):
+with st.expander("How to deploy this for FREE"):
     st.code("""
     1. Push all 25 projects to GitHub
     2. Go to share.streamlit.io -> Deploy this app.py
@@ -97,4 +97,4 @@ with st.expander("📌 How to deploy this for FREE"):
     """)
 
 st.balloons()
-st.success("🎉 CONGRATULATIONS - YOU COMPLETED 25 PROJECTS - YOU ARE NOW JOB READY DATA ANALYST")
+st.success(" CONGRATULATIONS - YOU COMPLETED 25 PROJECTS - YOU ARE NOW JOB READY DATA ANALYST")
