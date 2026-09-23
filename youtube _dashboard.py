@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(page_title="YouTube Analytics", layout="wide")
-st.title("📺 YouTube Channel Analytics Dashboard")
+st.title(" YouTube Channel Analytics Dashboard")
 
 @st.cache_data
 def load_data():
