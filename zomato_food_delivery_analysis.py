@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Zomato Analysis", layout="wide")
-st.title("🍔 Zomato Food Delivery Analysis")
+st.title("Zomato Food Delivery Analysis")
 
 @st.cache_data
 def load_data():
@@ -30,7 +30,7 @@ df = load_data()
 # KPIs
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Total Restaurants", df['Restaurant'].nunique())
-col2.metric("Avg Rating", f"{df['Rating'].mean():.2f} ⭐")
+col2.metric("Avg Rating", f"{df['Rating'].mean():.2f} ")
 col3.metric("Avg Delivery Time", f"{df['Delivery_Time'].mean():.0f} min")
 col4.metric("Total Orders", f"{df['Orders'].sum():,}")
 
