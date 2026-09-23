@@ -85,4 +85,4 @@ with st.expander(" Resume Point"):
 - Automated insights on best performing content and subscriber conversion rate
     """)
 
-st.success(" Project Done - You can now show YOUR OWN YouTube data in interview")
+st.success(" Project  - You can now show YOUR OWN YouTube data in interview")
