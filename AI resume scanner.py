@@ -3,7 +3,7 @@ import pypdf
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-st.title("📄 AI Resume ATS Checker")
+st.title("AI Resume ATS Checker")
 
 resume_file = st.file_uploader("Upload Resume PDF", type=["pdf"])
 job_desc = st.text_area("Paste Job Description")
