@@ -4,7 +4,7 @@ import newspaper
 from gtts import gTTS
 import os
 
-st.title(" AI News Podcast Generator")
+st.title("AI News Podcast Generator")
 
 category = st.selectbox("Category", ["Technology", "India", "Business", "Sports"])
 
