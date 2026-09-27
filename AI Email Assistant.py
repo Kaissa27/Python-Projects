@@ -1,7 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
 
-st.title("📧 AI Email Assistant")
+st.title("AI Email Assistant")
 
 # Dummy emails for demo - replace with Gmail API
 emails = [
