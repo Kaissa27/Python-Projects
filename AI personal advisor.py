@@ -3,7 +3,7 @@ import pandas as pd
 import google.generativeai as genai
 import plotly.express as px
 
-st.title("💰 AI Finance Advisor")
+st.title("AI Finance Advisor")
 
 uploaded_file = st.file_uploader("Upload Bank CSV", type="csv")
 
