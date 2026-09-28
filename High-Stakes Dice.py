@@ -3,7 +3,7 @@ import time
 
 def dice_casino():
     wallet = 100
-    print("--- WELCOME TO THE PYTHON CASINO 🎲 ---")
+    print("--- WELCOME TO THE PYTHON CASINO ---")
     print(f"You're starting with: ${wallet}")
 
     while wallet > 0:
@@ -32,14 +32,14 @@ def dice_casino():
         die1 = random.randint(1, 6)
         die2 = random.randint(1, 6)
         total = die1 + die2
-        print(f"🎲 {die1} + {die2} = {total}")
+        print(f" {die1} + {die2} = {total}")
 
         # 3. Win/Loss Logic
         if total == 7 or total == 11:
             print(f"LUCKY! You won ${bet}!")
             wallet += bet
         elif die1 == 1 and die2 == 1:
-            print("SNAKE EYES! The casino took everything! 😱")
+            print("SNAKE EYES! The casino took everything! ")
             wallet = 0
         elif total in [2, 3, 12]:
             print(f"CRAPS! You lost ${bet}.")
