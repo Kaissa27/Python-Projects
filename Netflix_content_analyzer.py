@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(page_title="Netflix Analysis", layout="wide")
-st.title("🎬 Netflix Content Analysis")
+st.title(" Netflix Content Analysis")
 
 @st.cache_data
 def load_data():
