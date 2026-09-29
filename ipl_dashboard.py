@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(page_title="IPL Analytics", layout="wide")
-st.title("🏏 IPL Analytics Dashboard - 2008 to 2024")
+st.title(" IPL Analytics Dashboard - 2008 to 2024")
 
 @st.cache_data
 def load_data():
