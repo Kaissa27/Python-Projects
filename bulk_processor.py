@@ -18,7 +18,7 @@ def run_bulk_data_pipeline():
         context = browser.new_context()
         page = context.new_page()
 
-        print(f"🚀 Starting bulk pipeline. Processing {len(input_df)} records...")
+        print(f" Starting bulk pipeline. Processing {len(input_df)} records...")
 
         # 3. Loop through every row in the spreadsheet data frame
         for index, row in input_df.iterrows():
