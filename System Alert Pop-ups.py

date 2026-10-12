@@ -11,7 +11,7 @@ def monitor_with_popups(threshold=80):
         if cpu_usage > threshold:
             # Trigger a desktop notification
             notification.notify(
-                title="🔥 System Alert: High CPU!",
+                title=" System Alert: High CPU!",
                 message=f"CPU usage is at {cpu_usage}%. Consider closing some apps.",
                 app_name="Python Health Monitor",
                 timeout=5 # Stays on screen for 5 seconds
