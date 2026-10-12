@@ -6,7 +6,7 @@ import os
 HOSTS_PATH = r"C:\Windows\System32\drivers\etc\hosts" 
 REDIRECT = "127.0.0.1"
 
-# Sites you want to block
+# Sites you want to block 
 WEBSITES = [
     "www.youtube.com", "youtube.com",
     "www.instagram.com", "instagram.com",
