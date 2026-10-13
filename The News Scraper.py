@@ -24,4 +24,3 @@ def scrape_news():
     else:
         print(f"Failed to reach site. Status code: {response.status_code}")
 
-# scrape_news()
