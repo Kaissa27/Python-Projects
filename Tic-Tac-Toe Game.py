@@ -92,5 +92,3 @@ reset_button.grid(row=4, column=0, columnspan=3)
 
 window.mainloop()
 
-
-
