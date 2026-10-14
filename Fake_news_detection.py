@@ -129,7 +129,7 @@ if st.button("Detect Fake or Real"):
         st.write("**Real Indicators**")
         st.dataframe(pd.DataFrame(top_real, columns=['Weight','Word']))
 
-with st.expander("📌 Resume Points - COPY THIS"):
+with st.expander("Resume Points - COPY THIS"):
     st.code("""
 - Built Fake News Detection model on 600 news articles using TF-IDF + Passive Aggressive Classifier
 - Achieved 94%+ accuracy in classifying Real vs Fake news
@@ -139,4 +139,4 @@ with st.expander("📌 Resume Points - COPY THIS"):
 - Tech: Python, NLP, Scikit-learn, TF-IDF, Passive Aggressive Classifier, Streamlit, Plotly
     """)
 
-st.success("✅ Project 29 Done - Fake News Detector Ready")
+st.success("Project Done - Fake News Detector Ready")
