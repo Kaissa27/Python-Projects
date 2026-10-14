@@ -62,7 +62,7 @@ k3.metric("Fake News", len(df[df['label']==1]))
 k4.metric("Fake %", f"{len(df[df['label']==1])/len(df)*100:.1f}%")
 
 # --- TRAIN MODEL ---
-st.subheader("🧠 Training Model - TF-IDF + Passive Aggressive Classifier")
+st.subheader(" Training Model - TF-IDF + Passive Aggressive Classifier")
 
 X = df['clean_text']
 y = df['label']
@@ -82,7 +82,7 @@ st.metric("Model Accuracy", f"{acc*100:.2f}%")
 
 c1,c2 = st.columns(2)
 with c1:
-    st.subheader("📊 Real vs Fake Distribution")
+    st.subheader("Real vs Fake Distribution")
     fig = px.pie(df, names='label', title='News Type',
                  color_discrete_map={0:'#636EFA',1:'#EF553B'})
     fig.update_traces(labels=['Real','Fake'])
@@ -98,7 +98,7 @@ with c2:
 
 # --- LIVE PREDICTION ---
 st.divider()
-st.subheader("🔮 Try Live - Paste Any News Headline")
+st.subheader(" Try Live - Paste Any News Headline")
 
 user_news = st.text_area("Enter news text:", "NASA confirms earth will go dark for 15 days shocking claim")
 
@@ -109,9 +109,9 @@ if st.button("Detect Fake or Real"):
     score = model.decision_function(vec)[0]
 
     if pred == 1:
-        st.error(f"🚨 FAKE NEWS - Confidence: {abs(score):.2f}")
+        st.error(f" FAKE NEWS - Confidence: {abs(score):.2f}")
     else:
-        st.success(f"✅ REAL NEWS - Confidence: {abs(score):.2f}")
+        st.success(f" REAL NEWS - Confidence: {abs(score):.2f}")
         st.balloons()
 
     # Why this prediction
