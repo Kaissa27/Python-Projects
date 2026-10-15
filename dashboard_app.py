@@ -12,12 +12,12 @@ DB_FILE = BASE_DIR / "production_analytics.db"
 # 1. UI HEADER CONFIGURATION
 # =====================================================================
 st.set_page_config(page_title="Data Pipeline Command Center", layout="wide")
-st.title("⚙️ Data Pipeline Command Center")
+st.title(" Data Pipeline Command Center")
 st.markdown("Real-time telemetry and extraction analytics from background automation daemons.")
 
 # Verify database infrastructure exists before loading
 if not DB_FILE.exists():
-    st.error(f"🔴 Data Warehouse file not detected at `{DB_FILE}`. Run your extraction pipeline first to log metrics!")
+    st.error(f" Data Warehouse file not detected at `{DB_FILE}`. Run your extraction pipeline first to log metrics!")
 else:
     # =====================================================================
     # 2. DATA EXTRACTION LAYER
@@ -56,7 +56,7 @@ else:
     left_chart_col, right_data_col = st.columns([1, 1])
 
     with left_chart_col:
-        st.subheader("📊 Outcome Distribution Matrix")
+        st.subheader(" Outcome Distribution Matrix")
         if total_runs > 0:
             status_counts = filtered_df["status"].value_counts()
             
@@ -72,7 +72,7 @@ else:
             st.info("No records match your filter constraints.")
 
     with right_data_col:
-        st.subheader("📋 Transaction Log Ledger")
+        st.subheader(" Transaction Log Ledger")
         # Display the live data frame as an interactive spreadsheet component
         st.dataframe(
             filtered_df[["id", "search_term", "char_count", "status", "timestamp"]],
