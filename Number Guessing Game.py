@@ -24,5 +24,3 @@ def guess_the_number():
         lives -= 1
 
     print(f"\nGame Over! The number was {secret}. Better luck next time!")
-
-# guess_the_number()
