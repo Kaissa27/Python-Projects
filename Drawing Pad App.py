@@ -65,16 +65,3 @@ thickness_slider.grid(row=0, column=3, padx=10)
 
 # Run Application
 root.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
