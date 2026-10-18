@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.title("📊 Amazon Sales Dashboard")
+st.title("Amazon Sales Dashboard")
 st.write("Upload your sales data CSV")
 
 uploaded = st.file_uploader("Upload CSV", type="csv")
