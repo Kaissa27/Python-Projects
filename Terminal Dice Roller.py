@@ -18,5 +18,3 @@ def dice_roller():
         choice = input("Roll again? (y/n): ").lower()
         if choice == 'n' or choice == 'q':
             break
-
-
