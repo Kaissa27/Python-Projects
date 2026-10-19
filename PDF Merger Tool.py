@@ -29,13 +29,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# Example Usage
-# pdf_order = get_pdf_order()
-# merge_pdfs(pdf_order, "merged_output.pdf")
-
-
-# Example Usage
-# merge_pdfs(["p1.pdf", "p2.pdf"], "merged.pdf")
-# print("PDFs merged successfully!")
