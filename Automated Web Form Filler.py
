@@ -28,5 +28,3 @@ def auto_form_filler():
             time.sleep(1) # Intentional delay to look human and avoid anti-bot blocks
             
         browser.close()
-
-# auto_form_filler()
