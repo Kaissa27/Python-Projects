@@ -47,3 +47,9 @@ def snake_game():
         clock.tick(15) # 15 Frames per second
 
 # snake_game()
+
+
+
+
+
+
