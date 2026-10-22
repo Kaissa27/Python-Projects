@@ -3,9 +3,9 @@ import pstats
 import time
 import random
 
-# =====================================================================
+# ===============================================
 # 1. HEAVY MOCK GAME ENGINE SUB-SYSTEMS TO PROFILE
-# =====================================================================
+# ===============================================
 def simulate_quadtree_lookup():
     """Simulates a highly repeated spatial indexing check."""
     # Intentional structural slowdown: Using a non-optimized list scan 
