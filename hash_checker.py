@@ -74,9 +74,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("\n[-] Exiting integrity checker.")
         sys.exit(0)
-
-
-
-
-
-
