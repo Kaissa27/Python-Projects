@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 import re
 
 st.set_page_config(page_title="Fake News Detector", layout="wide")
-st.title("📰 Project 29: Fake News Detection - NLP")
+st.title(" Project: Fake News Detection - NLP")
 
 @st.cache_data
 def load_data():
