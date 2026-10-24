@@ -139,4 +139,4 @@ with st.expander("Resume Points - COPY THIS"):
 - Tech: Python, NLP, Scikit-learn, TF-IDF, Passive Aggressive Classifier, Streamlit, Plotly
     """)
 
-st.success("Project Done - Fake News Detector Ready")
+st.success("Project - Fake News Detector Ready")
