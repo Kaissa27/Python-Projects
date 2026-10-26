@@ -94,14 +94,14 @@ def run_navigation_test():
     start_point = (0, 0)
     goal_point = (4, 4)
     
-    print("🧠 Initializing Informed A* Vector Path Routing Engine...")
+    print(" Initializing Informed A* Vector Path Routing Engine...")
     optimized_route = compute_a_star_path(mock_grid, start_point, goal_point)
     
     if optimized_route:
         print(f"🏁 Pathfinding Complete! Safely navigated wall matrices.")
         print(f"   Calculated Node Sequence: {optimized_route}")
     else:
-        print("❌ Pathfinding Failure: Obstacles completely isolate the target point coordinates.")
+        print("Pathfinding Failure: Obstacles completely isolate the target point coordinates.")
 
 if __name__ == "__main__":
     run_navigation_test()
