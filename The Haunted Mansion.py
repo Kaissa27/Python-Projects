@@ -36,9 +36,9 @@ def final_door(inventory):
 
     if action == "open":
         if "Gold Key" in inventory:
-            print("\nYou use the Gold Key. The door creaks open... YOU ARE FREE! 🎉")
+            print("\nYou use the Gold Key. The door creaks open... YOU ARE FREE! ")
         else:
-            print("\nThe door is locked. You are trapped forever! 👻")
+            print("\nThe door is locked. You are trapped forever! ")
     else:
         print("\nYou kicked the door and broke your toe. The ghost caught you. Game Over.")
 
