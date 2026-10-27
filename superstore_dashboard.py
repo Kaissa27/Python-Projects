@@ -91,4 +91,4 @@ with st.expander("Resume Points - Copy This"):
 - Deployed dashboard with multi-filter functionality for real-time business tracking
     """)
 
-st.success("FINAL PROJECT DONE - You now have 20 Projects!")
+st.success("congratulations !")
