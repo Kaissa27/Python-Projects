@@ -31,3 +31,7 @@ def bulk_rename(folder_path, base_name, extension):
 
 # Example Usage:
 # bulk_rename("C:/Users/Name/Pictures/Summer2026", "Italy_Trip", ".jpg")
+
+
+
+
