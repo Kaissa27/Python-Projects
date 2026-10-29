@@ -42,7 +42,3 @@ async def get_job_status(job_id: str):
         return {"error": "Job not found"}
     return job
 
-
-
-
-
