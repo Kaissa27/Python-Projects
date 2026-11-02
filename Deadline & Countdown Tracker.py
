@@ -23,11 +23,11 @@ class DeadlineTracker:
             days_left = time_left.days
 
             if days_left < 0:
-                status = f"⚠️ OVERDUE by {abs(days_left)} days"
+                status = f" OVERDUE by {abs(days_left)} days"
             elif days_left == 0:
-                status = "🚨 DUE TODAY"
+                status = " DUE TODAY"
             else:
-                status = f"✅ {days_left} days remaining"
+                status = f" {days_left} days remaining"
 
             print(f"{p['name']:<20} | {status}")
 
