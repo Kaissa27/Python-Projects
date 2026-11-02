@@ -63,5 +63,5 @@ thickness_slider = tk.Scale(control_frame, from_=1, to=10, orient="horizontal", 
 thickness_slider.set(2)
 thickness_slider.grid(row=0, column=3, padx=10)
 
-# Run Application
+# Run App
 root.mainloop()
