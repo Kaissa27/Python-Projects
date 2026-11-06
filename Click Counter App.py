@@ -42,4 +42,4 @@ exit_button = tk.Button(root, text="Exit", command=root.destroy, font=("Arial", 
 exit_button.pack(pady=20)
 
 # Run the App
-root.mainloop()
+root.mainloop() 
