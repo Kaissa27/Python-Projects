@@ -3,7 +3,7 @@ import json
 import os
 import sys
 
-# --- CONFIGURATION ---
+# -CONFIGURATION -
 TARGET_DIRECTORY = "./monitored_files"  # Directory path to monitor
 BASELINE_FILE = "baseline.json"         # File storing verified hash states
 
