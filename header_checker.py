@@ -4,7 +4,7 @@ pip install requests
 import sys
 import requests
 
-# --- CONFIGURATION ---
+# - CONFIGURATION -
 TARGET_URL = "https://example.com"
 
 # Essential security headers and their operational purpose
