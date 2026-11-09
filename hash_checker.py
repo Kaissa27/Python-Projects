@@ -2,8 +2,6 @@ import hashlib
 import os
 import sys
 
-# --- CORE MECHANICS ---
-
 def calculate_file_hash(filename):
     """Computes the SHA-256 hash fingerprint of a local file."""
     # Initialize the SHA-256 hashing engine
