@@ -104,4 +104,4 @@ st.write("2. **Peak Year**: Netflix added most titles in 2019-2020")
 st.write("3. **Top Genres**: International Movies, Dramas, Comedies rule")
 st.write("4. **Recommendation**: Add more Korean Dramas + True Crime - fastest growing")
 
-st.download_button(" Download Data", df.to_csv(index=False).encode(), "netflix_analysis.csv")
+st.download_button(" Download Data", df.to_csv(index=False).encode(), "netflix_analysis.csv") 
