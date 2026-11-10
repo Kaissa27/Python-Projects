@@ -1,6 +1,6 @@
 import tkinter as tk
 
-# Main Window
+# Main Window 
 root = tk.Tk()
 root.title("Click Counter App")
 root.geometry("400x300")
