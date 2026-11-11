@@ -5,7 +5,7 @@ import random
 import numpy as np
 from collections import deque
 
-# --- GAME SETTINGS ---
+# - GAME SETTINGS -
 WIDTH, HEIGHT = 400, 400
 GRID = 20
 pygame.init()
