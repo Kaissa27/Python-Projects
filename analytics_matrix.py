@@ -1,7 +1,7 @@
 import pandas as pd
 
 def compute_business_intelligence():
-    # Transaction stream source
+    # Transaction stream source 
     ledger_records = {
         "Branch": ["North", "South", "East", "North", "South", "East", "North"],
         "Category": ["Tech", "Office", "Tech", "Furniture", "Office", "Furniture", "Tech"],
