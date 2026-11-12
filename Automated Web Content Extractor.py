@@ -39,7 +39,7 @@ def scrape_simulation():
     # The 'zip' function pairs titles and prices into a list of tuples
     catalog = list(zip(titles, numeric_prices))
 
-    # 4. Analysis & Reporting
+    # 4. Analysis & Reporting 
     print(f"Scraped {len(catalog)} items from the page.\n")
     
     total_value = 0
