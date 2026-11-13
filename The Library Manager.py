@@ -40,3 +40,4 @@ connection = init_database()
 add_book(connection, "The Great Gatsby", "F. Scott Fitzgerald")
 add_book(connection, "1984", "George Orwell")
 find_books_by_author(connection, "George Orwell")
+
