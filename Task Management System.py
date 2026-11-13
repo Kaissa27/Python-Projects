@@ -1,4 +1,4 @@
-import sys
+import sys 
 
 def add_task(tasks):
     title = input("Task description: ").strip()
@@ -54,4 +54,4 @@ def main():
             print("Invalid selection.")
 
 if __name__ == "__main__":
-    main()
+    main() 
