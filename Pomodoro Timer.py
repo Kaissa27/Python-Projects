@@ -1,6 +1,6 @@
 import tkinter as tk
 
-# Initialize Timer variables
+# Initialize Timer variables 
 session_count = 0
 timer_running = False
 
