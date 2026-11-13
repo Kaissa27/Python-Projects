@@ -66,6 +66,3 @@ window.mainloop()
 
 
 
-
-
-
