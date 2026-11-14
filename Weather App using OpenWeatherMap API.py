@@ -34,7 +34,7 @@ def display_weather(weather):
   for key,value in weather.items():
     print(f"{key}: {value}")
 
-# Step 4: Main Program Loop
+# Step 4: Main Program Loop 
 while True:
   print("\n--- Weather App ---")
   city = input("Enter a city name (or 'q' to quit): ").strip()
