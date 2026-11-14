@@ -26,7 +26,7 @@ def track_price():
 
     with open('price_log.csv', mode='a', newline='') as file:
         writer = csv.writer(file)
-        # Add header if it's a new file
+        # Add header
         if not file_exists:
             writer.writerow(['Timestamp', 'Price'])
         writer.writerow([timestamp, current_price])
