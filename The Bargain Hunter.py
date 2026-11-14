@@ -5,7 +5,7 @@ from datetime import datetime
 import time
 
 def track_price():
-    # Example URL (using a dummy site for practice)
+    # Example URL
     url = 'https://www.example-store.com/product-123'
     headers = {"User-Agent": "Mozilla/5.0"}
 
