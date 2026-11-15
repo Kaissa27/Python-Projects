@@ -1,6 +1,5 @@
 from playwright.sync_api import sync_playwright
 import time 
-
 def run_browser_audit():
     # 1. Initialize the automation controller 
     with sync_playwright() as p:
