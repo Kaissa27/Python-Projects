@@ -2,7 +2,7 @@ from playwright.sync_api import sync_playwright
 import time 
 
 def run_browser_audit():
-    # 1. Initialize the automation controller
+    # 1. Initialize the automation controller 
     with sync_playwright() as p:
         # Launching a visible browser instance so we can watch it work
         # slow_mo puts a 500ms delay between actions so it looks completely human
@@ -45,4 +45,4 @@ def run_browser_audit():
         print("Automation engine deactivated successfully.")
 
 if __name__ == "__main__":
-    run_browser_audit()
+    run_browser_audit() 
