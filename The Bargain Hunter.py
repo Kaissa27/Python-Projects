@@ -5,7 +5,7 @@ from datetime import datetime
 import time
 
 def track_price():
-    # Example URL
+    # Example URL 
     url = 'https://www.example-store.com/product-123'
     headers = {"User-Agent": "Mozilla/5.0"}
 
@@ -33,4 +33,4 @@ def track_price():
 
     print(f"Logged ${current_price} at {timestamp}")
 
-# track_price()
+# track_price() 
