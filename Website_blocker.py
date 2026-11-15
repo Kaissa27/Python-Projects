@@ -51,4 +51,4 @@ def pomodoro():
 
 if __name__ == "__main__":
     print("Website Blocker Started. Run as Administrator!")
-    pomodoro()
+    pomodoro() 
