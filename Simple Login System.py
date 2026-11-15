@@ -56,6 +56,3 @@ exit_button.pack(pady=10)
 
 # Run the App
 root.mainloop()
-
-
-
