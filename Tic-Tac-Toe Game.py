@@ -7,7 +7,7 @@ board = [
 ]
 current_player = "X"
 
-#Create Main Window
+#Main Window 
 window = tk.Tk()
 window.title("Tic-Tac-Toe")
 window.geometry("400x400")
@@ -91,4 +91,3 @@ reset_button = tk.Button(window, text="Reset", font=("Arial", 14), command=reset
 reset_button.grid(row=4, column=0, columnspan=3)
 
 window.mainloop()
-
