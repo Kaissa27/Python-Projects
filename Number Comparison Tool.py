@@ -1,4 +1,4 @@
-# Number Comparison Tool 
+# Number Comparison Tool program
 number = 4 
 
 if number > 5:
