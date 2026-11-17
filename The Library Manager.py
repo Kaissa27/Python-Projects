@@ -1,7 +1,7 @@
 import sqlite3
 
 def init_database():
-    # 1. Connect to a database file (creates it if it doesn't exist)
+    # 1.Connect to a database file (creates it if it doesn't exist)
     conn = sqlite3.connect('my_library.db')
     cursor = conn.cursor()
 
