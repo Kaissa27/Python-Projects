@@ -1,4 +1,4 @@
-import datetime 
+import datetime
 
 # Custom Exception for better error handling
 class OverdraftError(Exception):
@@ -72,4 +72,4 @@ def main():
     my_account.display_statement()
 
 if __name__ == "__main__":
-    main()
+    main() 
