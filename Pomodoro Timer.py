@@ -4,7 +4,7 @@ import tkinter as tk
 session_count = 0
 timer_running = False
 
-# Timer Logic
+# Timer Logic 
 def countdown(seconds):
 	global timer_running
 	if seconds >= 0:
@@ -62,7 +62,3 @@ reset_button = tk.Button(window, text="Reset", command=reset_timer, font=("Arial
 reset_button.pack(side="right", padx=20)
 
 window.mainloop()
-
-
-
-
