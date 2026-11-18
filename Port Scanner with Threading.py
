@@ -2,7 +2,7 @@ import socket
 import threading
 from queue import Queue
 
-# Configuration
+# Configuration 
 target = "127.0.0.1"  # Localhost (your own computer)
 queue = Queue()
 open_ports = []
