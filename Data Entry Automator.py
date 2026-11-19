@@ -25,4 +25,4 @@ data_to_enter = [
 ]
 
 csv_file_path = 'data.csv'
-automate_data_entry(data_to_enter, csv_file_path)
+automate_data_entry(data_to_enter, csv_file_path) 
