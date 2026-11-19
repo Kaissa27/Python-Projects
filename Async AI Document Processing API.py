@@ -5,7 +5,7 @@ import time
 app = FastAPI(title="Async AI Processing API")
 
 # Simple in-memory database for demo purposes
-jobs_db = {}
+jobs_db = {} 
 
 def process_document_with_ai(job_id: str, file_contents: bytes):
     """Simulates background text extraction and AI summarization."""
