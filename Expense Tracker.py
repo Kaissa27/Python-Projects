@@ -1,4 +1,4 @@
-import csv
+import csv 
 from datetime import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -81,4 +81,4 @@ def main():
             print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
-    main() 
+    main()
