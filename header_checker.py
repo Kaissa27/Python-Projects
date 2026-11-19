@@ -1,6 +1,5 @@
 pip install requests
 
-
 import sys
 import requests
 
@@ -88,4 +87,4 @@ if __name__ == "__main__":
         audit_security_headers(TARGET_URL)
     except KeyboardInterrupt:
         print("\n[-] Audit canceled by user.")
-        sys.exit(0)
+        sys.exit(0) 
