@@ -1,4 +1,4 @@
-# Shopping List Application 
+# Shopping List App
 
 # Step 1: Initialize an empty shopping list
 shopping_list = []
