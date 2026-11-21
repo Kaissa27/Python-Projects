@@ -40,4 +40,4 @@ async def get_job_status(job_id: str):
     job = jobs_db.get(job_id)
     if not job:
         return {"error": "Job not found"}
-    return job
+    return job 
