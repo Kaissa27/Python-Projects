@@ -1,6 +1,6 @@
 import heapq
 
-# Directions matrix for traversing the grid (Up, Down, Left, Right)
+# Directions matrix for traversing the grid (Up, Down, Left, Right) 
 DIRECTIONS = [(0, -1), (0, 1), (-1, 0), (1, 0)]
 
 class PathNode:
