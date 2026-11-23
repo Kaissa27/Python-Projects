@@ -32,9 +32,9 @@ def init_db():
 def on_startup():
     init_db()
 
-# =====================================================================
+# ===============================================
 # 1. THE DATA INGESTION ENDPOINT (Used by Automation Workers)
-# =====================================================================
+# ===============================================
 @app.post("/logs", status_code=201)
 def log_execution(record: AuditRecord):
     """Receives pipeline metrics across the network and writes them to SQL."""
@@ -51,9 +51,9 @@ def log_execution(record: AuditRecord):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Database write failure: {str(e)}")
 
-# =====================================================================
+# ===============================================
 # 2. THE ANALYTICS SERVICE ENDPOINT (Used by the Web Dashboard)
-# =====================================================================
+# ===============================================
 @app.get("/logs")
 def get_all_logs():
     """Fetches full database ledger records and delivers them as JSON over HTTP."""
