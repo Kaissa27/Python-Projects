@@ -79,7 +79,7 @@ def audit_security_headers(url):
         print("=" * 60)
 
     except requests.RequestException as e:
-        print(f"[!] Target connection failed: {e}")
+        print(f"[!] Target connection failed: {e}") 
 
 
 if __name__ == "__main__":
