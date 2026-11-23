@@ -8,7 +8,7 @@ from sqlalchemy import Column, Integer, String, Float
 
 app = FastAPI(title="Hyper-Scale Non-Blocking Data API")
 
-# 1. ASYNCHRONOUS STORAGE CONFIGURATION
+# 1. ASYNCHRONOUS STORAGE CONFIGURATION 
 # We use the async-compatible sqlite+aiosqlite driver to model a live production asyncpg PostgreSQL setup
 ASYNC_DATABASE_URL = "sqlite+aiosqlite:///:memory:"
 
@@ -64,9 +64,9 @@ async def ingest_pipeline_metric(payload: MetricIngestionPayload):
             await session.rollback()
             raise HTTPException(status_code=500, detail=f"Async Database Fail: {str(e)}")
 
-# =====================================================================
+# ================================================================
 # 3. MOCK HIGH-VOLUME CONCURRENCY TEST ENGINE
-# =====================================================================
+# ================================================================
 async def simulate_concurrent_load(total_requests=500):
     """Simulates hundreds of scraping nodes hitting the API server simultaneously."""
     async with AsyncSessionLocal() as session:
