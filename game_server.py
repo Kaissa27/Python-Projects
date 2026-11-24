@@ -4,7 +4,7 @@ import json
 HOST = "127.0.0.1"
 PORT = 5555
 
-# Global server-side state repository tracking player coordinates
+# Global server-side state repository tracking player coordinates 
 game_state = {}
 connected_clients = set()
 
@@ -12,7 +12,7 @@ async def handle_client_connection(reader, writer):
     """Manages an isolated network data socket for an active player connection."""
     client_address = writer.get_extra_info('peername')
     player_id = f"Player_{client_address[1]}"
-    print(f"🔌 New client connected: {player_id}")
+    print(f"New client connected: {player_id}")
     
     # Initialize player coordinate space inside the master state matrix
     game_state[player_id] = {"x": 100, "y": 100, "color": player_id[-4:]}
@@ -43,9 +43,9 @@ async def handle_client_connection(reader, writer):
                     connected_clients.remove(client_writer)
 
     except Exception as e:
-        print(f"⚠️ Connection anomaly on {player_id}: {e}")
+        print(f"Connection anomaly on {player_id}: {e}")
     finally:
-        print(f"🛑 Disconnecting player: {player_id}")
+        print(f"Disconnecting player: {player_id}")
         connected_clients.remove(writer)
         if player_id in game_state:
             del game_state[player_id]
@@ -54,7 +54,7 @@ async def handle_client_connection(reader, writer):
 
 async def main():
     server = await asyncio.start_server(handle_client_connection, HOST, PORT)
-    print(f"🚀 Authoritative Game Server actively listening on {HOST}:{PORT}...")
+    print(f"Authoritative Game Server actively listening on {HOST}:{PORT}...")
     async with server:
         await server.serve_forever()
 
