@@ -7,7 +7,6 @@ PROXY_HOST = "127.0.0.1"
 PROXY_PORT = 9999
 BUFFER_SIZE = 4096
 
-
 def handle_client(client_socket, client_address):
     """Processes incoming request strings from the local client."""
     print(f"[*] Intercepted connection handshake from: {client_address[0]}:{client_address[1]}")
@@ -119,3 +118,4 @@ def start_proxy():
 
 if __name__ == "__main__":
     start_proxy()
+
