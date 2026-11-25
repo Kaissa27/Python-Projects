@@ -2,7 +2,7 @@ import datetime
 import socket
 import sys
 
-# --- CONFIGURATION ---
+# - CONFIGURATION -
 BIND_HOST = "0.0.0.0"     # Listen on all local network interfaces
 BIND_PORT = 2222          # Standard honeypot port (simulating SSH)
 HONEYPOT_LOG = "honeypot_events.log"
