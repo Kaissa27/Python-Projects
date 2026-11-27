@@ -8,7 +8,7 @@ from sqlalchemy import Column, Integer, String, Float
 
 app = FastAPI(title="Hyper-Scale Non-Blocking Data API")
 
-# 1. ASYNCHRONOUS STORAGE CONFIGURATION 
+# 1.ASYNCHRONOUS STORAGE CONFIGURATION 
 # We use the async-compatible sqlite+aiosqlite driver to model a live production asyncpg PostgreSQL setup
 ASYNC_DATABASE_URL = "sqlite+aiosqlite:///:memory:"
 
@@ -34,9 +34,9 @@ async def db_setup_hook():
     async with async_engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
-# =====================================================================
+# ===============================================
 # 2. NON-BLOCKING ASYNC ENDPOINT
-# =====================================================================
+# ===============================================
 @app.post("/metrics", status_code=201)
 async def ingest_pipeline_metric(payload: MetricIngestionPayload):
     """Asynchronous endpoint handler. Notice the 'async def' and 'await' syntax."""
