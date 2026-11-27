@@ -1,7 +1,7 @@
 import socket
 import sys
 
-# --- CONFIGURATION ---
+# -CONFIGURATION-
 TARGET_HOST = "127.0.0.1"  # Localhost for safe, isolated testing
 TARGET_PORTS = [21, 22, 25, 80, 110, 143, 443, 8080]  # Standard banner ports
 
