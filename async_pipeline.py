@@ -64,9 +64,9 @@ async def ingest_pipeline_metric(payload: MetricIngestionPayload):
             await session.rollback()
             raise HTTPException(status_code=500, detail=f"Async Database Fail: {str(e)}")
 
-# ================================================================
+# ==============================================
 # 3. MOCK HIGH-VOLUME CONCURRENCY TEST ENGINE
-# ================================================================
+# ===============================================
 async def simulate_concurrent_load(total_requests=500):
     """Simulates hundreds of scraping nodes hitting the API server simultaneously."""
     async with AsyncSessionLocal() as session:
@@ -83,7 +83,7 @@ async def simulate_concurrent_load(total_requests=500):
         await session.commit()
         
         elapsed = time.time() - start_time
-        print(f"🏁 Asynchronous batch operation completed in {elapsed:.4f} seconds!")
+        print(f" Asynchronous batch operation completed in {elapsed:.4f} seconds!")
 
 if __name__ == "__main__":
     import uvicorn
